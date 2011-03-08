@@ -29,7 +29,9 @@ RDEPENDS_${PN}-network = "\
                   hostap-daemon \
                   iptables \
                   eject \
+                  dhcp-client \
                   usb-modeswitch \
+                  usb-modeswitch-data \
                   iperf \
 		  connman \
 		  connman-plugin-wifi \
@@ -83,6 +85,8 @@ RDEPENDS_${PN}-java =  " \
 
 RDEPENDS_${PN}-java-osgi =  " \
                   ${PN}-java \
+                  com.buglabs.bug.swarm.connector \
+                  com.buglabs.bug.swarm.portal \
                   com.buglabs.app.appui \
                   com.buglabs.bug.base \
                   com.buglabs.bug.bmi \
