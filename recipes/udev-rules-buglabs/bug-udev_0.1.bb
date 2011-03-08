@@ -3,7 +3,7 @@ LICENSE = "GPL"
 SECTION = "x11"
 PRIORITY = "optional"
 RDEPENDS_${PN} = "udev"
-PR = "r25"
+PR = "r28"
 
 SRC_URI = "file://00-bug20.rules \
 	   file://bmi_eventpipe.sh \
@@ -11,6 +11,7 @@ SRC_URI = "file://00-bug20.rules \
 	   file://working.psr \
            file://mbkb-stop.sh \
            file://mbkb-start.sh \
+		   file://wlan-trigger.sh \
            "
 
 S = "${WORKDIR}"
