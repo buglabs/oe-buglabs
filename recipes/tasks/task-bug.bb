@@ -1,6 +1,6 @@
 # Copyright (C) 2011 Bug Labs, Inc
 
-PR = "r88"
+PR = "r89"
 
 ALLOW_EMPTY = "1"
 
@@ -85,8 +85,8 @@ RDEPENDS_${PN}-java =  " \
 
 RDEPENDS_${PN}-java-osgi =  " \
                   ${PN}-java \
-                  com.buglabs.bug.swarm.connector \
-                  com.buglabs.bug.swarm.portal \
+#                  com.buglabs.bug.swarm.connector \
+#                  com.buglabs.bug.swarm.portal \
                   com.buglabs.app.appui \
                   com.buglabs.bug.base \
                   com.buglabs.bug.bmi \
