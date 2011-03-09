@@ -1,3 +1,3 @@
-cd openembedded
+cd oe-buglabs
 git pull
 cd ..

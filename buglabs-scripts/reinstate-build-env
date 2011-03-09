@@ -8,8 +8,8 @@ then
 fi
 
 # switch to the buglabs branch
-cd openembedded
-git checkout -b buglabs origin/buglabs
+cd oe-buglabs
+git checkout -b buglabs-sw2.1 origin/buglabs-sw2.1
 cd ..
 
 # TOPDIR is where we are now
@@ -17,7 +17,7 @@ TOPDIR=`pwd`
 
 # add bitbake to the path
 export PATH=${TOPDIR}/bitbake-1.10.2/bin:$PATH
-export BBPATH=${TOPDIR}:${TOPDIR}/openembedded
+export BBPATH=${TOPDIR}:${TOPDIR}/oe-buglabs
 export BB_ENV_EXTRAWHITE="MACHINE DISTRO TOPDIR"
 
 if [ ! -d conf ]
@@ -25,7 +25,7 @@ then
         mkdir ${TOPDIR}/conf
 fi
 
-cp openembedded/buglabs-scripts/local.conf conf/
+cp oe-buglabs/buglabs-scripts/local.conf conf/
 
 echo $BBPATH
 echo "Configuring done."
