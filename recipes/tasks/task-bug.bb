@@ -1,6 +1,6 @@
 # Copyright (C) 2011 Bug Labs, Inc
 
-PR = "r90"
+PR = "r91"
 
 ALLOW_EMPTY = "1"
 
@@ -98,8 +98,8 @@ RDEPENDS_${PN}-java-osgi =  " \
                   com.buglabs.bug.jni.lcd \
                   com.buglabs.bug.jni.rxtx \
                   com.buglabs.bug.jni.vonhippel \
-                  #com.buglabs.bug.jni.camera \
-                  #com.buglabs.bug.module.camera \
+                  com.buglabs.bug.jni.camera \
+                  com.buglabs.bug.module.camera \
                   com.buglabs.bug.module.vonhippel \
                   com.buglabs.bug.module.gps \
                   com.buglabs.bug.module.lcd \
