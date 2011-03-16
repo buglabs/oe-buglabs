@@ -14,7 +14,8 @@ DEFAULT_PREFERENCE = "-2"
 SRC_URI = "http://hostap.epitest.fi/releases/wpa_supplicant-${PV}.tar.gz \
 	file://defconfig-0.6.0-gnutls \
 	file://ifupdown.sh \
-	file://functions.sh"
+	file://functions.sh \
+	file://wpa_supplicant.conf"
 
 S = "${WORKDIR}/wpa_supplicant-${PV}/wpa_supplicant"
 
@@ -58,6 +59,7 @@ do_install () {
 	install -d ${D}${sysconfdir}/wpa_supplicant
 	install -m 755 ${WORKDIR}/ifupdown.sh ${D}${sysconfdir}/wpa_supplicant/
 	install -m 755 ${WORKDIR}/functions.sh ${D}${sysconfdir}/wpa_supplicant
+	install -m 644 ${WORKDIR}/wpa_supplicant.conf ${D}${sysconfdir}/wpa_supplicant/
 
 	install -d ${D}/${sysconfdir}/dbus-1/system.d
 	install -m 644 ${S}/dbus-wpa_supplicant.conf ${D}/${sysconfdir}/dbus-1/system.d
