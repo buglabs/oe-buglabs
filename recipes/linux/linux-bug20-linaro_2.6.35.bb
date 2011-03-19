@@ -5,9 +5,9 @@ KERNEL_IMAGETYPE = "uImage"
 
 COMPATIBLE_MACHINE = "bug20"
 
-PR = "r2"
+PR = "r3"
 
-SRCREV = "1aa352a69d929a90058e4411b410f91c3ac94879"
+SRCREV = "9ec9867fe70171761d743e56785245b1dcedc74f"
 
 
 SRC_URI = "git://github.com/buglabs/bug20-2.6.35-linaro.git;branch=master;protocol=git"
