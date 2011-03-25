@@ -7,6 +7,8 @@ SRC_URI = "\
   file://datadir_java.patch \
   "
 
+PARALLEL_MAKE = ""
+
 inherit java-library autotools
 
 S = "${WORKDIR}/mail-${PV}"
