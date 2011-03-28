@@ -8,13 +8,7 @@ iface lo inet loopback
 # BUGbase Ethernet which is built into kernel
 # It is on USB but we rename it by udev rule
 auto eth0
-iface eth0 inet dhcp
 
 #
 # wireless interface
 auto wlan0
-iface wlan0 inet dhcp
-	wireless_mode managed
-	wireless_essid any
-	wpa-driver wext
-	wpa-conf /etc/wpa_supplicant.conf
