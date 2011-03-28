@@ -1,6 +1,6 @@
 require gnutls.inc
 
-PR = "${INC_PR}.0"
+PR = "${INC_PR}.1"
 
 EXTRA_OECONF += " --without-libgcrypt-prefix "
 
@@ -8,6 +8,8 @@ SRC_URI += "file://gettextize-with-gettext-0.18.patch \
             file://gnutls-openssl.patch \
             file://gnutls-replace-siginterrupt.patch \
            "
+
+PARALLEL_MAKE = ""
 
 do_configure_prepend() {
 
