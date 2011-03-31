@@ -1,6 +1,6 @@
 # Copyright (C) 2011 Bug Labs, Inc
 
-PR = "r93"
+PR = "r94"
 
 ALLOW_EMPTY = "1"
 
@@ -54,11 +54,11 @@ RDEPENDS_${PN}-debug = "\
 
 RDEPENDS_${PN}-x11 = "\
                   dbus-x11 \
-                  matchbox-theme-bug-dark \
-                  mb-bug-icon-theme \
+#                  matchbox-theme-bug-dark \
+#                  mb-bug-icon-theme \
                   pcmanfm \
-                  bug-reboot-icon \
-                  bug-shutdown-icon \
+#                  bug-reboot-icon \
+#                  bug-shutdown-icon \
                   xinput-calibrator \
                   synergy \
 "
