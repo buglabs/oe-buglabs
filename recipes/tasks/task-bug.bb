@@ -89,6 +89,7 @@ RDEPENDS_${PN}-java-osgi =  " \
 #                  com.buglabs.bug.swarm.connector \
 #                  com.buglabs.bug.swarm.portal \
                   com.buglabs.app.appui \
+                  com.buglabs.app.networkinggui \
                   com.buglabs.bug.base \
                   com.buglabs.bug.bmi \
                   com.buglabs.bug.event \
@@ -117,6 +118,7 @@ RDEPENDS_${PN}-java-osgi =  " \
                   com.buglabs.osgi.shell \
                   com.sun.javax.servlet \
                   com.buglabs.bug.jni.libmatthew \
+                  com.buglabs.bug.networking \
                   org.freedesktop.dbus \
 	          bug-avahi \
 "
