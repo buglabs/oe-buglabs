@@ -1,6 +1,6 @@
 # Copyright (C) 2011 Bug Labs, Inc
 
-PR = "r94"
+PR = "r96"
 
 ALLOW_EMPTY = "1"
 
@@ -54,11 +54,11 @@ RDEPENDS_${PN}-debug = "\
 
 RDEPENDS_${PN}-x11 = "\
                   dbus-x11 \
-#                  matchbox-theme-bug-dark \
-#                  mb-bug-icon-theme \
+                  matchbox-theme-bug-dark \
+                  mb-bug-icon-theme \
                   pcmanfm \
-#                  bug-reboot-icon \
-#                  bug-shutdown-icon \
+                  bug-reboot-icon \
+                  bug-shutdown-icon \
                   xinput-calibrator \
                   synergy \
 "
@@ -73,6 +73,7 @@ RDEPENDS_${PN}-devlangs = "\
 		  python-pybluez \
                   perl-modules \
                   task-native-sdk \
+				  python-pyserial \
 "
 
 RDEPENDS_${PN}-java =  " \
