@@ -11,3 +11,5 @@ SRC_LINK = "http://www.buglabs.net/program_version/download/1424"
 JARFILENAME = "NetworkingGUI.jar"
 FILES_${PN} += "/usr/share/java/apps/NetworkingGUI.jar"
 APIVERSION = "2.1"
+
+SRCREV = 13069
