@@ -5,7 +5,7 @@ KERNEL_IMAGETYPE = "uImage"
 
 COMPATIBLE_MACHINE = "bug20"
 
-PR = "r8"
+PR = "r9"
 
 SRCREV = "1ee0ed96351df50083042b51889fdf5690ddd113"
 
@@ -40,3 +40,10 @@ FILES_kernel-image += "${sysconfdir}/kernelinfo"
 
 module_conf_g_file_storage = "options g_file_storage file=/dev/mmcblk1 removable=y"
 module_autoload_g_file_storage = "g_file_storage"
+
+module_autoload_bmi_li3m02cm = "bmi_camera \
+iommu2 \
+omap3-iommu \
+omap3-isp \
+omap34xxcam \
+"
