@@ -7,7 +7,7 @@ DEPENDS += "service-tracker com.buglabs.common com.buglabs.bug.module.lcd com.bu
 
 PV = "2"
 
-SRC_LINK = "http://www.buglabs.net/program_version/download/1427"
+SRC_LINK = "http://www.buglabs.net/program_version/download/1428"
 JARFILENAME = "NetworkingGUI.jar"
 FILES_${PN} += "/usr/share/java/apps/NetworkingGUI.jar"
 APIVERSION = "2.1"
