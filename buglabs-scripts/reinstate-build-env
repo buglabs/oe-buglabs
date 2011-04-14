@@ -25,7 +25,12 @@ then
         mkdir ${TOPDIR}/conf
 fi
 
-cp oe-buglabs/buglabs-scripts/local.conf conf/
+if [ -f conf/local.conf ]
+then
+	echo "Not overwriting local.conf with default."
+else
+	cp oe-buglabs/buglabs-scripts/local.conf conf/
+fi
 
 echo $BBPATH
 echo "Configuring done."
