@@ -15,11 +15,12 @@ SRC_URI = "svn://svn.o-hand.com/repos/matchbox/trunk;module=matchbox-keyboard;pr
         file://5-Add-support-for-loading-multiple-independent-layouts.patch \
         file://6-Add-layout-switch-key-to-all-layouts.patch \
         file://7-Newer-autotools.patch \
-	    file://80matchboxkeyboard"
-
+	    file://80matchboxkeyboard \
+		"
 SRC_URI_append_bug20 = " file://mb_kb_mods.patch \
 			file://mb_kbd_size.patch \
-			file://keyboard-bug.xml"
+			file://keyboard-bug.xml \ 
+			file://add-show-hide-toggle-new.patch"
 
 SRC_URI_append_om-gta01 = " file://fic-gta01-font-size.patch"
 SRC_URI_append_om-gta02 = " file://fic-gta01-font-size.patch"
