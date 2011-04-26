@@ -1,10 +1,10 @@
 # Copyright (C) 2011 Bug Labs, Inc
 
-PR = "r96"
+PR = "r102"
 
 ALLOW_EMPTY = "1"
 
-PACKAGES += "${PN}-java ${PN}-java-osgi ${PN}-audio ${PN}-devlangs ${PN}-x11 ${PN}-network ${PN}-x11-debug ${PN}-debug"
+PACKAGES += "${PN}-java ${PN}-java-osgi ${PN}-audio ${PN}-devlangs ${PN}-x11 ${PN}-network ${PN}-x11-debug ${PN}-debug ${PN}-e17"
 
 PACKAGE_ARCH_${PN} = "${MACHINE_ARCH}"
 
@@ -54,7 +54,7 @@ RDEPENDS_${PN}-debug = "\
 
 RDEPENDS_${PN}-x11 = "\
                   dbus-x11 \
-                  matchbox-theme-bug-dark \
+#                  matchbox-theme-bug-dark \
                   mb-bug-icon-theme \
                   pcmanfm \
                   bug-reboot-icon \
@@ -134,4 +134,20 @@ RDEPENDS_${PN}-audio = "\
                   alsa-utils-speakertest \
                   alsa-utils-aseqnet \
                   alsa-utils-alsactl \
+"
+
+ECONFIG ?= "e-wm-config-default e-wm-config-illume2"
+EMENU ?= "e-wm-menu-shr"
+
+RDEPENDS_${PN}-e17 = " \
+    angstrom-x11-base-depends \
+    xserver-nodm-init \
+    mime-support e-wm ${ECONFIG} ${EMENU} \
+    xterm \
+    hicolor-icon-theme gnome-icon-theme \
+    angstrom-gnome-icon-theme-enable \
+    xcursor-transparent-theme \
+    shr-theme \
+    task-x11-illume \
+    gpe-scap \
 "
