@@ -2,7 +2,7 @@ DESCRIPTION = "Common X11 scripts and support files"
 LICENSE = "GPL"
 SECTION = "x11"
 RDEPENDS_${PN} = "xmodmap xrandr xdpyinfo"
-PR = "r9"
+PR = "r11"
 
 PACKAGE_ARCH = "all"
 DEFAULT_PREFERENCE = "-1"
@@ -20,14 +20,14 @@ SRC_URI_append = " file://loop.patch;striplevel=3 \
                    file://rgba.diff \
                    file://setDPI.sh \
                    file://89xdgautostart.sh \
-                   file://Xserver-virtex.patch"
+                   file://90xXWindowManager.patch \
+                   file://Xserver-bug20.patch"
 
 SRC_URI_append_angstrom = " file://xtscal-fix.patch "
 RDEPENDS_${PN}_append_angstrom = " tslib-calibrate "
 RDEPENDS_${PN}_append_shr = " xinput-calibrator "
 
 SRC_URI_append_shr = " file://89xTs_Calibrate.xinput_calibrator.patch \
-                       file://90xXWindowManager.patch \
                        file://Xserver.add.nocursor.for.gta.patch \
                        file://Xserver.add.xserver-system.patch \
                        file://Xserver.add.dpi.for.gta.patch \
