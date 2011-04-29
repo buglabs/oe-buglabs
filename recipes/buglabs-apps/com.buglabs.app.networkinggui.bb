@@ -5,7 +5,7 @@ HOMEPAGE = "http://www.buglabs.net/applications/NetworkingGUI"
 
 DEPENDS += "service-tracker com.buglabs.common com.buglabs.bug.module.lcd com.buglabs.bug.networking"
 
-PV = "4"
+PV = "5"
 
 SRC_LINK = "http://www.buglabs.net/program_version/download/1437"
 JARFILENAME = "NetworkingGUI.jar"
