@@ -1,6 +1,6 @@
 # Copyright (C) 2011 Bug Labs, Inc
 
-PR = "r97"
+PR = "r99"
 
 ALLOW_EMPTY = "1"
 
@@ -122,6 +122,8 @@ RDEPENDS_${PN}-java-osgi =  " \
                   com.buglabs.bug.networking \
                   org.freedesktop.dbus \
 	          bug-avahi \
+			  com.buglabs.app.bugdash2 \
+			  com.buglabs.bug.app.bugcamerahelloworld \
 "
 
 RDEPENDS_${PN}-audio = "\
