@@ -123,7 +123,7 @@ RDEPENDS_${PN}-java-osgi =  " \
                   org.freedesktop.dbus \
 	          bug-avahi \
 			  com.buglabs.app.bugdash2 \
-			  com.buglabs.bug.app.bugcamerahelloworld \
+			  com.buglabs.app.bugcamerahelloworld \
 "
 
 RDEPENDS_${PN}-audio = "\
