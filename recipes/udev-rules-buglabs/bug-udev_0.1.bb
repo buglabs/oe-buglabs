@@ -3,7 +3,7 @@ LICENSE = "GPL"
 SECTION = "x11"
 PRIORITY = "optional"
 RDEPENDS_${PN} = "udev"
-PR = "r28"
+PR = "r29"
 
 SRC_URI = "file://00-bug20.rules \
 	   file://bmi_eventpipe.sh \
