@@ -1,15 +1,11 @@
 #!/bin/bash
 #
 # Script to install OpenEmbedded for BUG
-# usage: oe-install.sh install_dir package_src_dir tmp_dir
+# usage: oe-install.sh
 
-OE_DIR=$1
-
-if [ ! -d ${OE_DIR} ]; then
+if [ ! -d oe-buglabs ]; then
     echo "Installing OpenEmbedded"
-	mkdir -p ${OE_DIR}
-	cd ${OE_DIR}
-	git clone git://github.com/buglabs/oe-buglabs.git
+	git clone git://github.com/buglabs/oe-buglabs.git oe-buglabs
 	cd oe-buglabs/
 	git checkout -b buglabs-sw2.1 origin/buglabs-sw2.1
 	cd ..
