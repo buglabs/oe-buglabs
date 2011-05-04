@@ -87,15 +87,13 @@ RDEPENDS_${PN}-java =  " \
 
 RDEPENDS_${PN}-java-osgi =  " \
                   ${PN}-java \
-#                  com.buglabs.bug.swarm.connector \
-#                  com.buglabs.bug.swarm.portal \
                   com.buglabs.app.appui \
                   com.buglabs.app.networkinggui \
                   com.buglabs.bug.base \
                   com.buglabs.bug.bmi \
                   com.buglabs.bug.event \
                   com.buglabs.bug.jni.common \
-		  com.buglabs.bug.jni.accelerometer \
+		  		  com.buglabs.bug.jni.accelerometer \
                   com.buglabs.bug.jni.gps \
                   com.buglabs.bug.jni.input \
                   com.buglabs.bug.jni.lcd \
@@ -107,14 +105,14 @@ RDEPENDS_${PN}-java-osgi =  " \
                   com.buglabs.bug.module.vonhippel \
                   com.buglabs.bug.module.gps \
                   com.buglabs.bug.module.lcd \
-		  com.buglabs.bug.module.video \
-		  com.buglabs.bug.module.motion \
+		          com.buglabs.bug.module.video \
+		          com.buglabs.bug.module.motion \
                   com.buglabs.bug.module \
                   com.buglabs.bug.program \
                   com.buglabs.bug.service \
                   com.buglabs.common \
                   com.buglabs.nmea \
-                  com.buglabs.osgi.http \
+                  org.apache.felix.http.jetty \
                   com.buglabs.osgi.sewing \
                   com.buglabs.osgi.shell \
                   com.sun.javax.servlet \
