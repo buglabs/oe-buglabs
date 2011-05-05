@@ -4,3 +4,4 @@ lib/oe/*.pyc
 lib/oe/*.pyo
 contrib/*/*.pyc
 contrib/*/*.pyo
+.project
