@@ -1,3 +1,5 @@
 require bug-osgi.inc
-PR = "${INC_PR}.9+svnr${SRCREV}"
+require bug-osgi-git.inc
+
+PR = "${INC_PR}.10"
 DEPENDS += "felix-configadmin"
