@@ -1,7 +1,7 @@
 require bug-osgi.inc
 PR = "${INC_PR}.11+svnr${SRCREV}"
 EXTRA_CP += "servlet-2.3.1"
-DEPENDS += "com.buglabs.common com.buglabs.bug.jni.input  com.buglabs.bug.jni.common servlet2.3 com.buglabs.osgi.http"
+DEPENDS += "com.buglabs.common com.buglabs.bug.jni.input  com.buglabs.bug.jni.common servlet2.3 org.apache.felix.http.jetty"
 
 SUBMODULE_bug20 = "molly"
 SUBMODULE_beagleboard = "beagle"

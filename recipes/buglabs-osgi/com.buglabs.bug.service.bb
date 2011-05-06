@@ -1,6 +1,6 @@
 require bug-osgi.inc
-DEPENDS += "com.buglabs.common felix-configadmin com.buglabs.osgi.http"
-RDEPENDS += "com.buglabs.osgi.http"
+DEPENDS += "com.buglabs.common felix-configadmin org.apache.felix.http.jetty"
+RDEPENDS += "org.apache.felix.http.jetty"
 DEPENDS += "servlet2.3"
 EXTRA_CP += "servlet-2.3.1"
 PR = "${INC_PR}.4+svnr${SRCREV}"
