@@ -29,8 +29,14 @@ do_compile_append() {
 }
 
 do_install_append() {
-	install -d ${D}${sysconfdir}/init.d
+    install -d ${D}${sysconfdir}/init.d
     install -m 0755 ${WORKDIR}/connman ${D}${sysconfdir}/init.d/connman
+
+#    install -d ${D}${libdir}/connman/scripts
+#    install -m 0755 ${S}/scripts/* ${D}${libdir}/connman/scripts
+
+    install -d ${D}${libdir}/connman/test
+    install -m 0755 ${S}/test/* ${D}${libdir}/connman/test
 }
 
 python populate_packages_prepend() {
@@ -62,7 +68,7 @@ FILES_${PN} = "${bindir}/* ${sbindir}/* ${libexecdir}/* ${libdir}/lib*.so.* \
 
 FILES_${PN}-test-utils += "${libdir}/connman/test/*"
 
-FILES_${PN}-scripts += "${libdir}/connman/scripts"
+FILES_${PN}-scripts += "${libdir}/connman/scripts/*"
 FILES_${PN}-dbg += "${libdir}/connman/*/.debug"
 FILES_${PN}-dev += "${libdir}/connman/*/*.la"
 

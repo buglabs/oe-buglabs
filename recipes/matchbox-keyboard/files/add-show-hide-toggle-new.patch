@@ -1,0 +1,181 @@
+Index: matchbox-keyboard/src/matchbox-keyboard-remote.c
+===================================================================
+--- matchbox-keyboard.orig/src/matchbox-keyboard-remote.c	2007-10-12 09:26:08.000000000 -0400
++++ matchbox-keyboard/src/matchbox-keyboard-remote.c	2011-04-22 17:02:41.551674015 -0400
+@@ -22,11 +22,18 @@
+ 
+ static Atom Atom_MB_IM_INVOKER_COMMAND;
+ 
++Atom
++mb_kbd_remote_atom (MBKeyboardUI *ui)
++{
++  return XInternAtom(mb_kbd_ui_x_display(ui),
++     "_MB_IM_INVOKER_COMMAND", False);
++}
++
++
+ void
+ mb_kbd_remote_init (MBKeyboardUI *ui)
+ {
+-  Atom_MB_IM_INVOKER_COMMAND = XInternAtom(mb_kbd_ui_x_display(ui), 
+-					   "_MB_IM_INVOKER_COMMAND", False);
++   Atom_MB_IM_INVOKER_COMMAND = mb_kbd_remote_atom(ui);
+ }
+ 
+ MBKeyboardRemoteOperation
+Index: matchbox-keyboard/src/matchbox-keyboard.c
+===================================================================
+--- matchbox-keyboard.orig/src/matchbox-keyboard.c	2011-04-22 17:02:41.231674015 -0400
++++ matchbox-keyboard/src/matchbox-keyboard.c	2011-04-22 17:04:52.381674004 -0400
+@@ -18,6 +18,9 @@
+  */
+ 
+ #include "matchbox-keyboard.h"
++#include "matchbox-keyboard-remote.h"
++#include "matchbox-keyboard-remote-fun.h"
++#include <X11/Xlib.h>
+ 
+ static void
+ mb_kbd_usage (char *progname)
+@@ -28,19 +31,47 @@
+ 	  "   -d,--daemon           Run in 'daemon' mode (for remote control)\n"
+ 	  "   -o,--orientation <portrait|landscape>\n"
+ 	  "                         Use to limit visibility with screen orientation \n"
+-	  "   -h,--hfactor <percent>\n"
+-	  "                         Fix keyboard window size in percentage of desktop height\n");
++	  "   -hf,--hfactor <percent>\n"
++	  "                         Fix keyboard window size in percentage of desktop height\n"
++          "                         Use to limit visibility with screen orientation \n"
++          "   -s,--show             Show an existing matchbox-keyboard daemon\n"
++          "   -h,--hide             Hide an existing matchbox-keyboard daemon\n"
++          "   -t,--toggle           Toggle display of an existing matchbox-keyboard daemon\n");
+   fprintf(stderr, "\nmatchbox-keyboard %s \nCopyright (C) 2007 OpenedHand Ltd.\n", VERSION);
+ 
+   exit(-1);
+ }
+ 
++static void
++protocol_send_event (MBKeyboardUI *ui, MBKeyboardRemoteOperation op)
++{
++  XEvent event;
++
++  memset (&event, 0, sizeof (XEvent));
++
++  event.xclient.type = ClientMessage;
++  event.xclient.window = mb_kbd_ui_x_win_root(ui);
++
++  event.xclient.message_type = mb_kbd_remote_atom(ui);
++  event.xclient.format = 32;
++  event.xclient.data.l[0] = op;
++
++  XSendEvent (mb_kbd_ui_x_display(ui),
++              mb_kbd_ui_x_win_root(ui),
++              False,
++              SubstructureRedirectMask | SubstructureNotifyMask,
++              &event);
++  XSync (mb_kbd_ui_x_display(ui), False);
++}
++
++
+ MBKeyboard*
+ mb_kbd_new (int argc, char **argv)
+ {
+   MBKeyboard *kb = NULL;
+   char       *variant = NULL; 
+   Bool        want_embedding = False, want_daemon = False;
++  Bool        want_show = False, want_hide = False, want_toggle = False;
+   int         i;
+   MBKeyboardDisplayOrientation orientation = MBKeyboardDisplayAny;
+ 
+@@ -65,7 +96,7 @@
+ 	  continue;
+ 	}
+ 
+-      if (streq ("-h", argv[i]) || streq ("--hfactor", argv[i])) 
++      if (streq ("-hf", argv[i]) || streq ("--hfactor", argv[i]))
+        {
+          if (i + 1 < argc) {
+            kb->hfactor = atoi(argv[i + 1]);
+@@ -96,6 +127,23 @@
+ 
+ 	  continue;
+ 	}
++      if (streq ("-s", argv[i]) || streq ("--show", argv[i]))
++	{
++	  want_show = True;
++	  continue;
++	}
++
++      if (streq ("-h", argv[i]) || streq ("--hide", argv[i]))
++	{
++	  want_hide = True;
++	  continue;
++	}
++
++      if (streq ("-t", argv[i]) || streq ("--toggle", argv[i]))
++	{
++	  want_toggle = True;
++	  continue;
++	}
+ 
+       if (i == (argc-1) && argv[i][0] != '-')
+ 	variant = argv[i];
+@@ -109,6 +157,24 @@
+   if (!mb_kbd_ui_init(kb))
+     return NULL;
+ 
++  if (want_show)
++    {
++      protocol_send_event(kb->ui, MBKeyboardRemoteShow);
++      return NULL;
++    }
++
++  if (want_hide)
++    {
++      protocol_send_event(kb->ui, MBKeyboardRemoteHide);
++      return NULL;
++    }
++
++  if (want_toggle)
++    {
++      protocol_send_event(kb->ui, MBKeyboardRemoteToggle);
++      return NULL;
++    }
++
+   if (mb_kbd_ui_display_width(kb->ui) <= 320) 
+     {
+       kb->key_border   = 1;
+Index: matchbox-keyboard/src/matchbox-keyboard-remote-fun.h
+===================================================================
+--- /dev/null	1970-01-01 00:00:00.000000000 +0000
++++ matchbox-keyboard/src/matchbox-keyboard-remote-fun.h	2011-04-22 17:02:41.551674015 -0400
+@@ -0,0 +1,29 @@
++/* 
++ *  Matchbox Keyboard - A lightweight software keyboard.
++ *
++ *  Authored By Matthew Allum <mallum@o-hand.com>
++ *
++ *  Copyright (c) 2005 OpenedHand Ltd - http://o-hand.com
++ *
++ *  This program is free software; you can redistribute it and/or modify
++ *  it under the terms of the GNU General Public License as published by
++ *  the Free Software Foundation; either version 2, or (at your option)
++ *  any later version.
++ *
++ *  This program is distributed in the hope that it will be useful,
++ *  but WITHOUT ANY WARRANTY; without even the implied warranty of
++ *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
++ *  GNU General Public License for more details.
++ *
++ */
++
++#ifndef HAVE_MB_KEYBOARD_REMOTE_FUN_H
++#define HAVE_MB_KEYBOARD_REMOTE_FUN_H
++
++#include "matchbox-keyboard.h"
++
++Atom
++mb_kbd_remote_atom (MBKeyboardUI *ui);
++
++
++#endif

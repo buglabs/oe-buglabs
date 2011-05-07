@@ -9,9 +9,9 @@ inherit bug-java-library
 JARFILENAME = "${BPN}.jar"
 ALTJARFILENAMES = ""
 
-INC_PR = "r0"
+INC_PR = "r1"
 
-SRCREV = "12839"
+SRCREV = "13114"
 
 SRC_URI = "svn://bugcamp.net/bug/trunk;module=${PN};proto=svn "
 

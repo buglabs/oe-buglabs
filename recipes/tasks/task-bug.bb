@@ -1,6 +1,6 @@
 # Copyright (C) 2011 Bug Labs, Inc
 
-PR = "r102"
+PR = "r99"
 
 ALLOW_EMPTY = "1"
 
@@ -37,6 +37,7 @@ RDEPENDS_${PN}-network = "\
 		  connman-plugin-wifi \
 #		  connman-plugin-ofono \
 		  connman-plugin-ethernet \
+		  connman-test-utils \
 "
 
 RDEPENDS_${PN}-x11-debug = "\
@@ -121,6 +122,8 @@ RDEPENDS_${PN}-java-osgi =  " \
                   com.buglabs.bug.networking \
                   org.freedesktop.dbus \
 	          bug-avahi \
+			  com.buglabs.app.bugdash2 \
+			  com.buglabs.app.bugcamerahelloworld \
 "
 
 RDEPENDS_${PN}-audio = "\
