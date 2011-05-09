@@ -1,4 +1,8 @@
 #!/bin/bash
+# This script assumes it's running in the root of an oe-build, and that it is being called
+# after a build has completed succesfully.
+# The propose of the script is to execute tests against code contained in the depoy/sysroots output.
+# It is designed to be called from within and without the CI system.
 
 if [ -z $WORKSPACE ]; then
 	echo "Setting WORKSPACE TO `pwd`"
@@ -21,6 +25,7 @@ else
 	mkdir $DEPS_DIR
 fi
 
+echo "Copying oe-built jars from $JAVA_OE_BUILD_DIR"
 cp $JAVA_OE_BUILD_DIR/* $DEPS_DIR
 
 if [ ! -f $DEPS_DIR/junit-dep-4.9b2.jar ]; then
@@ -50,6 +55,7 @@ else
 	cd ..
 fi
 
+echo "Running tests com.buglabs.common.tests"
 ant -Dbase.build.dir=$BUILD_TOOLS -Dcheckout.dir=$WORKSPACE/bug-osgi -DexternalDirectory=$DEPS_DIR -DdistDirectory=$TEST_BIN -f $TEST_ROOT/bug-osgi/com.buglabs.common.tests/build.xml test
 
 cd $WORKSPACE
