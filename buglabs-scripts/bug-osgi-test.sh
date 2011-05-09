@@ -16,9 +16,9 @@ DEPS_DIR=$TEST_ROOT/subjects
 
 if [ ! -d $DEPS_DIR ]; then
 	mkdir $DEPS_DIR
-#else 
-#	rm -Rf $DEPS_DIR
-#	mkdir $DEPS_DIR
+else 
+	rm -Rf $DEPS_DIR
+	mkdir $DEPS_DIR
 fi
 
 cp $JAVA_OE_BUILD_DIR/* $DEPS_DIR
@@ -53,3 +53,4 @@ fi
 ant -Dbase.build.dir=$BUILD_TOOLS -Dcheckout.dir=$WORKSPACE/bug-osgi -DexternalDirectory=$DEPS_DIR -DdistDirectory=$TEST_BIN -f $TEST_ROOT/bug-osgi/com.buglabs.common.tests/build.xml test
 
 cd $WORKSPACE
+echo "Test phase complete."
