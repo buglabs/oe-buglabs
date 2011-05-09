@@ -40,6 +40,10 @@ if [ ! -d $TEST_BIN ]; then
 	mkdir $TEST_BIN
 fi
 
+if [ ! -d $TEST_ROOT/junit-reports ]; then
+	mkdir $TEST_ROOT/junit-reports
+fi
+
 cd $TEST_ROOT
 
 if [ ! -d bug-osgi ]; then
@@ -56,7 +60,7 @@ else
 fi
 
 echo "Running tests com.buglabs.common.tests"
-ant -Dbase.build.dir=$BUILD_TOOLS -Dcheckout.dir=$TEST_ROOT/bug-osgi -DexternalDirectory=$DEPS_DIR -DdistDirectory=$TEST_BIN -f $TEST_ROOT/bug-osgi/com.buglabs.common.tests/build.xml test
+ant -Dreport.dir=$TEST_ROOT/junit-reports -Dbase.build.dir=$BUILD_TOOLS -Dcheckout.dir=$TEST_ROOT/bug-osgi -DexternalDirectory=$DEPS_DIR -DdistDirectory=$TEST_BIN -f $TEST_ROOT/bug-osgi/com.buglabs.common.tests/build.xml test
 
 cd $WORKSPACE
 echo "Test phase complete."
