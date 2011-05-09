@@ -48,8 +48,7 @@ ALLOW_EMPTY = "1"
 RDEPENDS_task-poky-apps-console = "\
     avahi-daemon \
     dropbear \
-    portmap \
-    psplash"
+    portmap"
 
 RDEPENDS_task-poky-x11-base = "\
     pointercal \
