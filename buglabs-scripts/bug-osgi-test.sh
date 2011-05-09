@@ -56,7 +56,7 @@ else
 fi
 
 echo "Running tests com.buglabs.common.tests"
-ant -Dbase.build.dir=$BUILD_TOOLS -Dcheckout.dir=$WORKSPACE/bug-osgi -DexternalDirectory=$DEPS_DIR -DdistDirectory=$TEST_BIN -f $TEST_ROOT/bug-osgi/com.buglabs.common.tests/build.xml test
+ant -Dbase.build.dir=$BUILD_TOOLS -Dcheckout.dir=$TEST_ROOT/bug-osgi -DexternalDirectory=$DEPS_DIR -DdistDirectory=$TEST_BIN -f $TEST_ROOT/bug-osgi/com.buglabs.common.tests/build.xml test
 
 cd $WORKSPACE
 echo "Test phase complete."
