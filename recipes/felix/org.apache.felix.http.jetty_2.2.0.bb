@@ -1,7 +1,4 @@
-require felix-binary-bundle.inc
-
 DESCRIPTION = "R4 Compliant OSGi HTTP Service using Jetty."
 
-SRC_URI[md5sum] = "cab4792b9b12ae28e0c77f9e47c46589"
-SRC_URI[sha256sum] = "aa5b51b62f392e402b6ff36b78f1a3a30c969c2e1e7b38915545ba5ac34f3909"
-
+SRC_URI[md5sum] = "71723628d859f25c6cbc9cd60898e82a"
+SRC_URI[sha256sum] = "e4d019c20015b7b36ff6480730255dfbd6c9091615a99353ee4c1cc815ab2cf3"
