@@ -50,6 +50,7 @@ if [ ! -d $BUILD_TOOLS ]; then
 	exit 1
 else 
 	cd bug-osgi
+	git reset --hard HEAD
 	git pull
 	cd ..
 fi
