@@ -14,7 +14,6 @@ cd $WORKSPACE
 JAVA_OE_BUILD_DIR=$WORKSPACE/oe-tmp/sysroots/java
 TEST_ROOT=$WORKSPACE/tests
 BUILD_TOOLS=$TEST_ROOT/bug-osgi/com.buglabs.osgi.build
-TEST_BIN=$TEST_ROOT/bin
 DEPS_DIR=$TEST_ROOT/subjects
 
 
@@ -34,10 +33,6 @@ fi
 
 if [ ! -d $TEST_ROOT ]; then
 	mkdir $TEST_ROOT
-fi
-
-if [ ! -d $TEST_BIN ]; then
-	mkdir $TEST_BIN
 fi
 
 if [ ! -d $TEST_ROOT/junit-reports ]; then
@@ -60,7 +55,7 @@ else
 fi
 
 echo "Running tests com.buglabs.common.tests"
-ant -Dreport.dir=$TEST_ROOT/junit-reports -Dbase.build.dir=$BUILD_TOOLS -Dcheckout.dir=$TEST_ROOT/bug-osgi -DexternalDirectory=$DEPS_DIR -DdistDirectory=$TEST_BIN -f $TEST_ROOT/bug-osgi/com.buglabs.common.tests/build.xml test
+ant -Dreport.dir=$TEST_ROOT/junit-reports -Dbase.build.dir=$BUILD_TOOLS -Dcheckout.dir=$TEST_ROOT/bug-osgi -DexternalDirectory=$DEPS_DIR -DdistDirectory=$DEPS_DIR -f $TEST_ROOT/bug-osgi/com.buglabs.common.tests/build.xml test
 
 cd $WORKSPACE
 echo "Test phase complete."
