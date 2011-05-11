@@ -21,13 +21,13 @@ DEPS_DIR=$TEST_ROOT/subjects
 
 if [ ! -d $DEPS_DIR ]; then
 	mkdir $DEPS_DIR
-#else 
-#	rm -Rf $DEPS_DIR
-#	mkdir $DEPS_DIR
+else 
+	rm -Rf $DEPS_DIR
+	mkdir $DEPS_DIR
 fi
 
 echo "Copying oe-built jars from $JAVA_OE_BUILD_DIR"
-#cp $JAVA_OE_BUILD_DIR/* $DEPS_DIR
+cp $JAVA_OE_BUILD_DIR/* $DEPS_DIR
 
 if [ ! -f $DEPS_DIR/junit-osgi-4.9b2.jar ]; then
 	wget --no-check-certificate -P $DEPS_DIR https://github.com/downloads/buglabs/bug-osgi/junit-osgi-4.9b2.jar
@@ -50,11 +50,11 @@ fi
 if [ ! -d $BUILD_TOOLS ]; then
 	echo "com.buglabs.osgi.build is not at $BUILD_TOOLS, aborting."
 	exit 1
-#else 
-#	cd bug-osgi
-#	git reset --hard HEAD
-#	git pull
-#	cd ..
+else 
+	cd bug-osgi
+	git reset --hard HEAD
+	git pull
+	cd ..
 fi
 
 
@@ -67,7 +67,7 @@ if [ ! -f $DEPS_DIR/com.buglabs.osgi.tester.jar ]; then
 	ant -Dbase.build.dir=$BUILD_TOOLS -Dcheckout.dir=$TEST_ROOT/bug-osgi -DexternalDirectory=$DEPS_DIR -DdistDirectory=$DEPS_DIR -f $TEST_ROOT/bug-osgi/com.buglabs.osgi.tester/build.xml build.jars
 fi
 
-ant -Dreport.dir=$TEST_ROOT/junit-reports -Dcom.buglabs.osgi.tester.report.dir=$TEST_ROOT/junit-reports -Dbase.build.dir=$BUILD_TOOLS -Dcheckout.dir=$TEST_ROOT/bug-osgi -DexternalDirectory=$DEPS_DIR -DdistDirectory=$DEPS_DIR -f $TEST_ROOT/bug-osgi/com.buglabs.common.tests/build.xml test-osgi
+ant -Dreport.dir=$TEST_ROOT/junit-reports -Dbase.build.dir=$BUILD_TOOLS -Dcheckout.dir=$TEST_ROOT/bug-osgi -DexternalDirectory=$DEPS_DIR -DdistDirectory=$DEPS_DIR -f $TEST_ROOT/bug-osgi/com.buglabs.common.tests/build.xml test-osgi
 
 cd $WORKSPACE
 echo "Test phase complete."
