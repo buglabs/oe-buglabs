@@ -1,13 +1,12 @@
 require linux.inc
 
-DESCRIPTION = "Linux kernel for BUG20 based on the Linaro kernel tree"
 KERNEL_IMAGETYPE = "uImage"
 
 COMPATIBLE_MACHINE = "bug20"
 
-PR = "r13"
+PR = "r14"
 
-SRCREV = "5fff0a7a1271e599cbc4193a6eeca145cd353684"
+SRCREV = "b955811bfe8ec2ddd2121f8043039599d2a83e9a"
 
 
 SRC_URI = "git://github.com/buglabs/bug20-2.6.35-linaro.git;branch=master;protocol=git"
