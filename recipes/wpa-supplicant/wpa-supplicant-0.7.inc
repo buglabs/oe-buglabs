@@ -53,7 +53,7 @@ do_install () {
 
 	install -d ${D}${sysconfdir}/default
 	install -m 600 ${WORKDIR}/defaults-sane ${D}${sysconfdir}/default/wpa
-	install -m 600 ${WORKDIR}/wpa_supplicant.conf-sane ${D}${sysconfdir}/wpa_supplicant.conf
+#	install -m 600 ${WORKDIR}/wpa_supplicant.conf-sane ${D}${sysconfdir}/wpa_supplicant.conf
 
 	install -d ${D}${sysconfdir}/network/if-pre-up.d/
 	install -d ${D}${sysconfdir}/network/if-post-down.d/
