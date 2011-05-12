@@ -18,7 +18,7 @@ TEST_ROOT=$WORKSPACE/tests
 BUILD_TOOLS=$TEST_ROOT/bug-osgi/com.buglabs.osgi.build
 DEPS_DIR=$TEST_ROOT/subjects
 
-if ! -d $TEST_ROOT ]; then
+if [ ! -d $TEST_ROOT ]; then
 	mkdir $TEST_ROOT
 fi
 
