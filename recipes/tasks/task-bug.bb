@@ -1,6 +1,6 @@
 # Copyright (C) 2011 Bug Labs, Inc
 
-PR = "r99"
+PR = "r100"
 
 ALLOW_EMPTY = "1"
 
@@ -38,6 +38,7 @@ RDEPENDS_${PN}-network = "\
 #		  connman-plugin-ofono \
 		  connman-plugin-ethernet \
 		  connman-test-utils \
+		  ppp-scripts \
 "
 
 RDEPENDS_${PN}-x11-debug = "\
