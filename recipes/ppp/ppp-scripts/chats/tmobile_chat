@@ -1,0 +1,14 @@
+TIMEOUT10
+ABORT'BUSY'
+ABORT'NOANSWER'
+ABORT'ERROR'
+SAY'StartingGPRSconnectscript\n'
+
+""'ATZ'
+SAY'SettingAPN\n'
+OK'AT+CGDCONT=1,"IP","wap.voicestream.com"'
+
+ABORT'NOCARRIER'
+SAY'Dialing...\n'
+OK'ATD*99***1#'
+CONNECT
