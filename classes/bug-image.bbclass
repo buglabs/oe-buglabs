@@ -26,7 +26,7 @@ SATO_IMAGE_FEATURES = "${X11_IMAGE_FEATURES} apps-x11-sato"
 
 #set these variables to defaults if not already set
 BUILD_URL ?= "unknown"
-BUG_RELEASE_VERSION ?= "`whoami`@`uname -a`"
+BUG_RELEASE_VERSION ?= "`whoami`@`uname -n`"
 BUILD_NUMBER ?= "0"
 
 IMAGE_NAME = "${IMAGE_BASENAME}-${MACHINE}-${DISTRO_VERSION}-${BUG_RELEASE_VERSION}.${BUILD_NUMBER}"
