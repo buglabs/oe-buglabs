@@ -69,59 +69,58 @@ RDEPENDS_${PN}-devlangs = "\
                   lua5.1 \
                   python-modules \
                   python-misc \
-		  python-pygobject \
-		  python-dbus \
-		  python-pybluez \
+				  python-pygobject \
+				  python-dbus \
+				  python-pybluez \
                   perl-modules \
                   task-native-sdk \
 				  python-pyserial \
 "
 
 RDEPENDS_${PN}-java =  " \
-                  openjdk-6-jre \
-                  felix-init \
-		  felix \
-		  felix-configadmin \
-                  zip \
+				openjdk-6-jre \
+				knapsack
+				felix-configadmin \
+				zip \
 "
 
 RDEPENDS_${PN}-java-osgi =  " \
-                  ${PN}-java \
-                  com.buglabs.bug.appui \
-                  com.buglabs.app.networkinggui \
-                  com.buglabs.bug.base.molly \
-                  com.buglabs.bug.bmi \
-                  com.buglabs.bug.event \
-                  com.buglabs.bug.jni.common \
-		  		  com.buglabs.bug.jni.accelerometer \
-                  com.buglabs.bug.jni.gps \
-                  com.buglabs.bug.jni.input \
-                  com.buglabs.bug.jni.lcd \
-                  com.buglabs.bug.jni.rxtx \
-                  com.buglabs.bug.jni.vonhippel \
-                  com.buglabs.bug.jni.camera \
-				  com.buglabs.bug.jni.motion \
-                  com.buglabs.bug.module.camera \
-                  com.buglabs.bug.module.vonhippel \
-                  com.buglabs.bug.module.gps \
-                  com.buglabs.bug.module.lcd \
-		          com.buglabs.bug.module.video \
-		          com.buglabs.bug.module.motion \
-                  com.buglabs.bug.module \
-                  com.buglabs.bug.program \
-                  com.buglabs.bug.service \
-                  com.buglabs.common \
-                  com.buglabs.nmea \
-                  org.apache.felix.http.jetty \
-                  com.buglabs.osgi.sewing \
-                  com.buglabs.osgi.shell \
-                  com.buglabs.util.shell \
-                  com.sun.javax.servlet \
-                  com.buglabs.bug.jni.libmatthew \
-                  com.buglabs.bug.networking \
-                  org.freedesktop.dbus \
-	          bug-avahi \
-			  com.buglabs.app.bugdash2 \
+				${PN}-java \
+				com.buglabs.bug.appui \
+				com.buglabs.app.networkinggui \
+				com.buglabs.bug.base.molly \
+				com.buglabs.bug.bmi \
+				com.buglabs.bug.event \
+				com.buglabs.bug.jni.common \
+				com.buglabs.bug.jni.accelerometer \
+				com.buglabs.bug.jni.gps \
+				com.buglabs.bug.jni.input \
+				com.buglabs.bug.jni.lcd \
+				com.buglabs.bug.jni.rxtx \
+				com.buglabs.bug.jni.vonhippel \
+				com.buglabs.bug.jni.camera \
+				com.buglabs.bug.jni.motion \
+				com.buglabs.bug.module.camera \
+				com.buglabs.bug.module.vonhippel \
+				com.buglabs.bug.module.gps \
+				com.buglabs.bug.module.lcd \
+				com.buglabs.bug.module.video \
+				com.buglabs.bug.module.motion \
+				com.buglabs.bug.module \
+				com.buglabs.bug.program \
+				com.buglabs.bug.service \
+				com.buglabs.common \
+				com.buglabs.nmea \
+				org.apache.felix.http.jetty \
+				com.buglabs.osgi.sewing \
+				com.buglabs.osgi.shell \
+				com.buglabs.util.shell \
+				com.sun.javax.servlet \
+				com.buglabs.bug.jni.libmatthew \
+				com.buglabs.bug.networking \
+				org.freedesktop.dbus \
+				bug-avahi \
+				com.buglabs.app.bugdash2 \
 "
 
 RDEPENDS_${PN}-audio = "\
