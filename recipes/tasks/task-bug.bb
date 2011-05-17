@@ -84,7 +84,7 @@ RDEPENDS_${PN}-devlangs = "\
 
 RDEPENDS_${PN}-java =  " \
 				openjdk-6-jre \
-				knapsack
+				knapsack \
 				felix-configadmin \
 				zip \
 "
