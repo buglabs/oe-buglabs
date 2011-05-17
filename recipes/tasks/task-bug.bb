@@ -1,10 +1,10 @@
 # Copyright (C) 2011 Bug Labs, Inc
 
-PR = "r99"
+PR = "r101"
 
 ALLOW_EMPTY = "1"
 
-PACKAGES += "${PN}-java ${PN}-java-osgi ${PN}-audio ${PN}-devlangs ${PN}-x11 ${PN}-network ${PN}-x11-debug ${PN}-debug"
+PACKAGES += "${PN}-java ${PN}-java-osgi ${PN}-audio ${PN}-devlangs ${PN}-x11 ${PN}-network ${PN}-x11-debug ${PN}-debug ${PN}-docs"
 
 PACKAGE_ARCH_${PN} = "${MACHINE_ARCH}"
 
@@ -38,6 +38,7 @@ RDEPENDS_${PN}-network = "\
 #		  connman-plugin-ofono \
 		  connman-plugin-ethernet \
 		  connman-test-utils \
+		  ppp-scripts \
 "
 
 RDEPENDS_${PN}-x11-debug = "\
@@ -51,6 +52,10 @@ RDEPENDS_${PN}-debug = "\
                   ${PN}-x11-debug \
                   tslib-tests \
                   tslib-calibrate \
+"
+
+RDEPENDS_${PN}-docs = "\
+                  buglabs-docs \
 "
 
 RDEPENDS_${PN}-x11 = "\

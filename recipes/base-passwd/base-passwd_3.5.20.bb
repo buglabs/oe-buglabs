@@ -1,13 +1,14 @@
 DESCRIPTION = "Base system password/group files."
 SECTION = "base"
 LICENSE = "GPLv2"
-PR = "r1"
+PR = "r2"
 
 SRC_URI = "\
   ${DEBIAN_MIRROR}/main/b/base-passwd/base-passwd_${PV}.tar.gz \
   file://nobash.patch \
   file://root-home.patch \
   file://mysql.patch \
+  file://bash.patch \
 "
 S = "${WORKDIR}/base-passwd"
 
