@@ -1,0 +1,20 @@
+Index: git/build.xml
+===================================================================
+--- git.orig/build.xml	2011-05-17 16:28:45.977760001 +0900
++++ git/build.xml	2011-05-17 16:29:54.377760002 +0900
+@@ -79,7 +79,7 @@
+ 	
+     <target name="compile" depends="stage" description="compile the Java source code to class files">
+         <mkdir dir="classes"/>
+-        <javac srcdir="." destdir="classes" source="1.6" target="1.6">	
++        <javac srcdir="." destdir="classes" source="1.6" target="1.6" encoding="utf-8" fork="yes">	
+         	<include name="org/**" />
+         	<exclude name="${external.dir}/**" />
+         </javac>
+@@ -117,4 +117,4 @@
+ 		           windowtitle="${project.description}">		   
+ 		  </javadoc>
+ 	</target>
+-</project>
+\ No newline at end of file
++</project>
