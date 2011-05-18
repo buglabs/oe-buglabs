@@ -5,7 +5,7 @@ RCONFLICTS_${PN} = "matchbox-keyboard"
 SECTION = "x11"
 SRCREV = "1910"
 PV = "0.0+svnr${SRCPV}"
-PR = "r13"
+PR = "r14"
 
 SRC_URI = "svn://svn.o-hand.com/repos/matchbox/trunk;module=matchbox-keyboard;proto=http \
 	    file://smallscreen-fontsize.patch \
