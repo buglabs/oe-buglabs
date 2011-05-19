@@ -37,6 +37,10 @@ do_install_append() {
 
     install -d ${D}${libdir}/connman/test
     install -m 0755 ${S}/test/* ${D}${libdir}/connman/test
+
+    install -d ${D}/var/lib/connman/
+    touch ${D}/var/lib/connman/default.profile
+    
 }
 
 python populate_packages_prepend() {
