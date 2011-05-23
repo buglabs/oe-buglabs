@@ -16,11 +16,6 @@ S = ${WORKDIR}
 
 PACKAGE_ARCH = "all"
 
-do_fetch() {
-  echo "HI THERE"
-  :
-}
-
 do_install() {
     install -d ${D}/home/root
     install -m 0644 ${S}/README* ${D}/home/root/
