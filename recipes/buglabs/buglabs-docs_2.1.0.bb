@@ -1,6 +1,6 @@
 DESCRIPTION = "Documentation for BUG"
 LICENSE = "GPL"
-PR = "r1"
+PR = "r2"
 
 SRC_URI = " \
   file://BUG_Guide.pdf \
@@ -12,12 +12,10 @@ FILES_${PN} = " \
   /home/root/README \
 "
 
-S = ${WORKDIR}
-
 PACKAGE_ARCH = "all"
 
 do_install() {
     install -d ${D}/home/root
-    install -m 0644 ${S}/README* ${D}/home/root/
-    install -m 0644 ${S}/BUG_Guide.pdf* ${D}/home/root/
+    install -m 0644 ${WORKDIR}/README ${D}/home/root/
+    install -m 0644 ${WORKDIR}/BUG_Guide.pdf ${D}/home/root/
 }
