@@ -8,9 +8,9 @@ SRC_URI = " \
 "
 
 FILES_${PN} = " \
-  /home/root/BUG_Guide.pdf \
-  /home/root/README \
+/ \
 "
+
 
 PACKAGE_ARCH = "all"
 
