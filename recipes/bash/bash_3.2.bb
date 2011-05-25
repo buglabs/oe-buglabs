@@ -1,6 +1,6 @@
 require bash.inc
 
-PR = "r13"
+PR = "r14"
 
 SRC_URI += "\
            file://builtins.patch \
@@ -44,6 +44,7 @@ SRC_URI += "\
            http://ftp.gnu.org/gnu/bash/bash-3.2-patches/bash32-038;apply=yes;striplevel=0;name=bash32-38 \
            http://ftp.gnu.org/gnu/bash/bash-3.2-patches/bash32-039;apply=yes;striplevel=0;name=bash32-39 \
            file://default_path.patch \
+		   file://bash.bashrc \
            "
 
 SRC_URI[archive.md5sum] = "00bfa16d58e034e3c2aa27f390390d30"
