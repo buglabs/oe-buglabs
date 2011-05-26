@@ -56,7 +56,7 @@ do_install_append_bug20 () {
 	install -m 755 ${WORKDIR}/80matchboxkeyboard ${D}/${sysconfdir}/X11/Xsession.d/
 	install -d ${D}/${datadir}/matchbox-keyboard/
 	install -m 644 ${WORKDIR}/keyboard-bug.xml ${D}/${datadir}/matchbox-keyboard/
-	rm ${D}${datadir}/applications/inputmethods/${PN}.desktop
+	rm ${D}${datadir}/applications/inputmethods/matchbox-keyboard.desktop
 }
 
 pkg_postinst_matchbox-keyboard-im () {
