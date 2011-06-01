@@ -11,7 +11,7 @@ ALTJARFILENAMES = ""
 
 INC_PR = "r1"
 
-SRCREV = "13127"
+SRCREV = "13129"
 
 SRC_URI = "svn://bugcamp.net/bug/trunk;module=${PN};proto=svn "
 

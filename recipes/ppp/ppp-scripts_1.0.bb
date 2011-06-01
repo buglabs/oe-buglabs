@@ -2,7 +2,7 @@ SECTION = "console/network"
 DESCRIPTION = "PPP scripts for easy common carriers"
 LICENSE = "GPL"
 RDEPENDS_${PN} = "ppp"
-PR = "r0"
+PR = "r1"
 
 SRC_URI = "file://peers/* file://chats/*"
 

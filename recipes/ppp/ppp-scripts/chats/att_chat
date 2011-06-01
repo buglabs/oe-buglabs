@@ -28,7 +28,7 @@ SAY     'Setting APN\n'
 #OK     'AT+CGDCONT=1,"IP","proxy"'
 #OK     'AT+CGDCONT=2,"IP","proxy"'
 #OK     'AT+CGDCONT=0,"IP","ISP.CINGULAR"'
-OK     'AT+CGDCONT=1,"IP","WAP.CINGULAR"'
+OK     'AT+CGDCONT=1,"IP","ISP.CINGULAR"'
 #OK     'AT+CGDCONT=2,"IP","ISP.CINGULAR"'
 
 #######################################

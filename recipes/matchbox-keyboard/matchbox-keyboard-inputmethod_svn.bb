@@ -5,7 +5,7 @@ RCONFLICTS_${PN} = "matchbox-keyboard"
 SECTION = "x11"
 SRCREV = "1910"
 PV = "0.0+svnr${SRCPV}"
-PR = "r13"
+PR = "r14"
 
 SRC_URI = "svn://svn.o-hand.com/repos/matchbox/trunk;module=matchbox-keyboard;proto=http \
 	    file://smallscreen-fontsize.patch \
@@ -56,6 +56,7 @@ do_install_append_bug20 () {
 	install -m 755 ${WORKDIR}/80matchboxkeyboard ${D}/${sysconfdir}/X11/Xsession.d/
 	install -d ${D}/${datadir}/matchbox-keyboard/
 	install -m 644 ${WORKDIR}/keyboard-bug.xml ${D}/${datadir}/matchbox-keyboard/
+	rm ${D}${datadir}/applications/inputmethods/matchbox-keyboard.desktop
 }
 
 pkg_postinst_matchbox-keyboard-im () {
