@@ -3,11 +3,11 @@ LICENSE = "Apache 2.0"
 PR = "r1"
 
 BRANCH = "master"
-SRCREV = "540c6bf7734474c6e44970ed5362a912566e19ec"
+SRCREV = "4da567c42ddad2c4697a"
 S = "${WORKDIR}/git"
 
 SRC_URI="git://github.com/kgilmer/knapsack.git;protocol=git;branch=${BRANCH} \
-		 file://fork-ant-utf8.patch \
+#		 file://fork-ant-utf8.patch \
 		"
 
 FILES_${PN} = "/usr/share/java/${PN}.jar"
