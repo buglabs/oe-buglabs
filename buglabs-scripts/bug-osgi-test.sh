@@ -43,8 +43,10 @@ fi
 if [ ! -d $TEST_ROOT/junit-reports ]; then
 	mkdir $TEST_ROOT/junit-reports
 else
+	set +e
 	# Delete old reports
 	rm $TEST_ROOT/junit-reports/*
+	set -e
 fi
 
 cd $TEST_ROOT
