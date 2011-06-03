@@ -1,5 +1,12 @@
-require bug-osgi.inc
-require bug-osgi-git.inc
+require buglabs-osgi.inc
 
-PR = "${INC_PR}.1"
+DESCRIPTION = "BUG bundle com.buglabs.util.shell"
+LICENSE = "BSD"
+
+PR = "7"
 DEPENDS += "com.buglabs.common"
+
+SRCREV = "aea3a911a0a9121a1ad6"
+
+
+
