@@ -3,12 +3,3 @@
 # The loopback interface
 auto lo
 iface lo inet loopback
-
-# Wired interface
-# BUGbase Ethernet which is built into kernel
-# It is on USB but we rename it by udev rule
-auto eth0
-
-#
-# wireless interface
-auto wlan0

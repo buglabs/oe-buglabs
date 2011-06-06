@@ -5,7 +5,7 @@ RCONFLICTS_${PN} = matchbox-keyboard-inputmethod
 SECTION = "x11"
 SRCREV = "1910"
 PV = "0.0+svnr${SRCPV}"
-PR = "r9"
+PR = "r10"
 
 SRC_URI = "svn://svn.o-hand.com/repos/matchbox/trunk;module=${PN};proto=http \
            file://smallscreen-fontsize.patch \
@@ -28,3 +28,6 @@ FILES_${PN} = "${bindir}/* \
 	       ${datadir}/pixmaps \
 	       ${datadir}/matchbox-keyboard"
 
+do_install_append_bug20(){ 
+           rm ${D}${datadir}/applications/inputmethods/${PN}.desktop
+}

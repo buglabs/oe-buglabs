@@ -3,7 +3,7 @@ LICENSE = "GPL"
 DEPENDS = "libmatchbox virtual/libx11 libxext libxpm apmd startup-notification virtual/kernel wireless-tools"
 SECTION = "x11/wm"
 
-PR = "r3"
+PR = "r4"
 
 inherit autotools pkgconfig gettext
 
@@ -14,6 +14,5 @@ EXTRA_OECONF_append = '${@base_conditional("GUI_MACHINE_CLASS", "bigscreen", "",
 PACKAGE_ARCH = "${MACHINE}"
 
 FILES_${PN} = "${bindir}/* \
-	       ${datadir}/applications \
 	       ${datadir}/pixmaps"
 

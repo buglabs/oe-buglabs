@@ -3,7 +3,7 @@ LICENSE = "GPL"
 SECTION = "x11"
 PRIORITY = "optional"
 RDEPENDS_${PN} = "udev"
-PR = "r29"
+PR = "r31"
 
 SRC_URI = "file://00-bug20.rules \
 	   file://bmi_eventpipe.sh \
@@ -25,3 +25,7 @@ do_install() {
     install -m 0775 *.sh ${D}/etc/udev/scripts
     install -m 0644 working.psr ${D}/etc/udev/scripts/
 }    
+pkg_postinst_${PN} (){
+    sed -i "s/0011 2821 005b 6789/$(sed -e 's/smsc95xx.mac=\(..:..:..:..:..:..\) .*/\1/' -e 's/\(..\):\(..\):\(..\):\(..\):\(..\):\(..\)/00\4 \5\6 00\3 \1\2/' /proc/cmdline)/" /etc/udev/scripts/working.psr
+}
+	

@@ -28,6 +28,11 @@ do_compile_prepend() {
 	cd ${S}
 }
 
+do_install_append() {
+		install -d ${D}/etc
+		install -m 0644 ${WORKDIR}/bash.bashrc ${D}${sysconfdir}/
+}
+		
 pkg_postinst () {
 	touch $D${sysconfdir}/shells
 	grep -q "bin/bash" $D${sysconfdir}/shells || echo /bin/bash >> $D${sysconfdir}/shells

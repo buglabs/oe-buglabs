@@ -16,7 +16,7 @@ fi
 TOPDIR=`pwd`
 
 # add bitbake to the path
-export PATH=${TOPDIR}/bitbake-1.10.2/bin:$PATH
+export PATH=${TOPDIR}/bitbake-1.12.0/bin:$PATH
 export BBPATH=${TOPDIR}:${TOPDIR}/oe-buglabs
 export BB_ENV_EXTRAWHITE="MACHINE DISTRO TOPDIR"
 
