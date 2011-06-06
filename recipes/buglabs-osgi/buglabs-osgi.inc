@@ -6,13 +6,15 @@ OSGI_BASE_DIR = "/usr/share/osgi"
 SRC_URI="git://github.com/buglabs/bug-osgi.git;protocol=git;branch=${BRANCH}"
 BRANCH = "master"
 
+INC_PR = "r1"
+
 S = "${WORKDIR}/git/${PN}"
 
 FILES_${PN} = "${OSGI_BASE_DIR}/bundle/${PN}.jar"
 PACKAGE_ARCH = "all"
 
 # Must set this explicitly because it defaults to a value of 1.
-SRCREV = "aea3a911a0a9121a1ad6"
+SRCREV = "8abc79ce7883718cb169"
 
 do_compile() {
 	ant -Dbase.build.dir=${WORKDIR}/git/com.buglabs.osgi.build -Dcheckout.dir=${WORKDIR}/git -DexternalDirectory=${WORKDIR}/external -DdistDirectory=${WORKDIR}/dist create_dirs build.jars
