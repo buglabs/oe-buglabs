@@ -93,7 +93,7 @@ RDEPENDS_${PN}-java-osgi =  " \
 				${PN}-java \
 				com.buglabs.bug.appui \
 				com.buglabs.app.networkinggui \
-				com.buglabs.bug.base.molly \
+				com.buglabs.bug.base.bug20 \
 				com.buglabs.bug.bmi \
 				com.buglabs.bug.event \
 				com.buglabs.bug.jni.common \
