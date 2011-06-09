@@ -16,13 +16,16 @@ PACKAGE_ARCH = "all"
 # Must set this explicitly because it defaults to a value of 1.
 SRCREV = "41a22fbee4db3e93f2f8"
 
+# Default file permissions on jar.  If jar is executable that means it should be started under knapsack.
+BUNDLE_PERM="0644"
+
 do_compile() {
 	ant -Dbase.build.dir=${WORKDIR}/git/com.buglabs.osgi.build -Dcheckout.dir=${WORKDIR}/git -DexternalDirectory=${WORKDIR}/external -DdistDirectory=${WORKDIR}/dist create_dirs build.jars
 }
 
 do_install() {
 	install -d ${D}/${OSGI_BASE_DIR}/bundle
-	install -m 0644 ${WORKDIR}/dist/${PN}.jar ${D}/${OSGI_BASE_DIR}/bundle/${PN}.jar
+	install -m ${BUNDLE_PERM} ${WORKDIR}/dist/${PN}.jar ${D}/${OSGI_BASE_DIR}/bundle/${PN}.jar
 }
 
 
