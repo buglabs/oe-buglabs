@@ -12,10 +12,10 @@ if [ ! -d oe-buglabs ]; then
 fi
 
 # test if bitbake exist; if not; fetch it and untar it
-if [ ! -d bitbake-1.10.2 ]; then
+if [ ! -d bitbake-1.12.0 ]; then
 	echo "Installing BitBake"
-    wget http://download.berlios.de/bitbake/bitbake-1.10.2.tar.gz
-    tar xf bitbake-1.10.2.tar.gz
+    wget http://download.berlios.de/bitbake/bitbake-1.12.0.tar.gz
+    tar xf bitbake-1.12.0.tar.gz
 fi
 
 echo "Bug Labs OE build system installed, proceed to configuration."
