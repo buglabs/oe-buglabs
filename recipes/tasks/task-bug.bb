@@ -115,7 +115,7 @@ RDEPENDS_${PN}-java-osgi =  " \
 				com.buglabs.bug.program \
 				com.buglabs.bug.service \
 				com.buglabs.common \
-				com.buglabs.nmea \
+				com.buglabs.util.nmea \
 				org.apache.felix.http.jetty \
 				com.buglabs.osgi.sewing \
 				com.buglabs.osgi.shell \
