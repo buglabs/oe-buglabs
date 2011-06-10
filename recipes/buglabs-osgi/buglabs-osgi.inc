@@ -14,7 +14,7 @@ FILES_${PN} = "${OSGI_BASE_DIR}/bundle/${PN}.jar"
 PACKAGE_ARCH = "all"
 
 # Must set this explicitly because it defaults to a value of 1.
-SRCREV = "b4cdcae58a85a68188f0"
+SRCREV = "e6baeabd947ea966186d"
 
 # Default file permissions on jar.  If jar is executable that means it should be started under knapsack.
 BUNDLE_PERM="0644"
