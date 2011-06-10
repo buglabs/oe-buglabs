@@ -111,9 +111,7 @@ RDEPENDS_${PN}-java-osgi =  " \
 				com.buglabs.bug.module.lcd \
 				com.buglabs.bug.module.video \
 				com.buglabs.bug.module.motion \
-				com.buglabs.bug.module \
-				com.buglabs.bug.program \
-				com.buglabs.bug.service \
+				com.buglabs.bug.ws \
 				com.buglabs.common \
 				com.buglabs.util.nmea \
 				org.apache.felix.http.jetty \
