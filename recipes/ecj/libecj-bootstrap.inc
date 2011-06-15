@@ -13,7 +13,7 @@ S = "${WORKDIR}"
 JAR = "ecj-bootstrap-${PV}.jar"
 
 NATIVE_INSTALL_WORKS = "1"
-
+PARALLEL_MAKE=""
 do_unpackpost() {
   if [ ! -d source ]; then
     mkdir source
@@ -48,16 +48,16 @@ do_unpackpost() {
 addtask unpackpost after do_unpack before do_patch
 
 do_compile() {
-  find source -name '*.java' > sourcefiles
+  find source -name '*.java' | sort > sourcefiles
   split -l 25 sourcefiles ecj-sources.
 
   # Compiling in place is done because the sources contain
   # property files which need to be available at runtime.
   for list in `find . -name 'ecj-sources.*'`; do
       echo "building files in $list ...";
-      echo jikes-initial -d build -source 1.4 -sourcepath source `cat $list`;
+      echo jikes-initial -d build -source 1.4 -sourcepath source `cat $list | sort`;
       jikes-initial \
-				-d build -source 1.4 -sourcepath source `cat $list`;
+				-d build -source 1.4 -sourcepath source `cat $list | sort`;
   done
 
   fastjar -c -C build . -f ${JAR}
