@@ -1,9 +1,3 @@
-# org.openembedded.openjdk.jar is a custom javac configuration class for ant.
-# It allows ant to use the javac provided by openjdk rather than the one provided by ecj
-# Ant is hardcoded to expect a javac in JAVA_HOME, and since the openjdk javac is called something 
-# else, this customizer is necessary.
-# See http://ant.apache.org/manual/Tasks/javac.html
-
 OSGI_BASE_DIR ?= "/usr/share/osgi"
 
 DEPENDS = "ant-native"
@@ -27,11 +21,18 @@ SRCREV = "321035a6cc5cb0ec79f2"
 # Default file permissions on jar.  If jar is executable that means it should be started under knapsack.
 BUNDLE_PERM="0644"
 
+do_replace_ecj_with_openjdk_javac() {
+	if [ ! -f ${STAGING_BINDIR_NATIVE}/javac.ecj ]; then
+		echo "Replacing ecj javac with openjdk javac in staging"
+		mv ${STAGING_BINDIR_NATIVE}/javac ${STAGING_BINDIR_NATIVE}/javac.ecj
+		ln -s ${STAGING_LIBDIR_NATIVE}/jvm/icedtea6-native/bin/javac ${STAGING_BINDIR_NATIVE}/javac
+	fi
+}
+
+addtask do_replace_ecj_with_openjdk_javac after do_patch before do_compile
+
 do_compile() {
-	export OE_JAVAC_PATH=${STAGING_LIBDIR_NATIVE}/jvm/icedtea6-native/bin/javac
-	export CLASSPATH=${WORKDIR}:$CLASSPATH
-	ant -d -Dbuild.compiler=org.openembedded.openjdk.JavacExternal -Dbase.build.dir=${WORKDIR}/git/com.buglabs.osgi.build -Dcheckout.dir=${WORKDIR}/git -DexternalDirectory=${WORKDIR}/external -DdistDirectory=${WORKDIR}/dist create_dirs build.jars
-	echo $?
+	ant -Dbase.build.dir=${WORKDIR}/git/com.buglabs.osgi.build -Dcheckout.dir=${WORKDIR}/git -DexternalDirectory=${WORKDIR}/external -DdistDirectory=${WORKDIR}/dist create_dirs build.jars
 }
 
 do_install() {
