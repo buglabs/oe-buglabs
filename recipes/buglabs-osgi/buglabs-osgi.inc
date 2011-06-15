@@ -3,9 +3,7 @@ OSGI_BASE_DIR ?= "/usr/share/osgi"
 DEPENDS = "ant-native"
 
 OSGI_BASE_DIR = "/usr/share/osgi"
-SRC_URI="git://github.com/buglabs/bug-osgi.git;protocol=git;branch=${BRANCH} \
-	file://org.openembedded.openjdk.jar \
-	"
+SRC_URI="git://github.com/buglabs/bug-osgi.git;protocol=git;branch=${BRANCH}"
 BRANCH = "master"
 
 INC_PR = "r6"
@@ -31,8 +29,8 @@ do_replace_ecj_with_openjdk_javac() {
 
 addtask do_replace_ecj_with_openjdk_javac after do_patch before do_compile
 
-do_compile() {
-	ant -Dbase.build.dir=${WORKDIR}/git/com.buglabs.osgi.build -Dcheckout.dir=${WORKDIR}/git -DexternalDirectory=${WORKDIR}/external -DdistDirectory=${WORKDIR}/dist create_dirs build.jars
+do_compile() {	
+	ant -Dbase.build.dir=${WORKDIR}/git/com.buglabs.osgi.build -Dcheckout.dir=${WORKDIR}/git -DexternalDirectory=${STAGING_DIR_JAVA} -DdistDirectory=${WORKDIR}/dist create_dirs build.jars
 }
 
 do_install() {
