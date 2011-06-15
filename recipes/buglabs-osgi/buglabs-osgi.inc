@@ -1,3 +1,5 @@
+inherit java
+
 OSGI_BASE_DIR ?= "/usr/share/osgi"
 
 DEPENDS = "ant-native"
@@ -38,5 +40,8 @@ do_install() {
 	install -m ${BUNDLE_PERM} ${WORKDIR}/dist/${PN}.jar ${D}/${OSGI_BASE_DIR}/bundle/${PN}.jar
 }
 
+do_java_stage() {
+  oe_jarinstall -s ${WORKDIR}/dist/${PN}.jar
+}
 
-
+addtask do_java_stage after do_compile before do_package
