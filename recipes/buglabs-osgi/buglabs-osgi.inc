@@ -28,7 +28,7 @@ SRCREV = "321035a6cc5cb0ec79f2"
 BUNDLE_PERM="0644"
 
 do_compile() {
-	export OE.JAVAC.PATH=${STAGING_DIR_NATIVE}/jvm/icedtea6-native/bin/javac
+	export OE_JAVAC_PATH=${STAGING_LIBDIR_NATIVE}/jvm/icedtea6-native/bin/javac
 	export CLASSPATH=${WORKDIR}:$CLASSPATH
 	ant -d -Dbuild.compiler=org.openembedded.openjdk.JavacExternal -Dbase.build.dir=${WORKDIR}/git/com.buglabs.osgi.build -Dcheckout.dir=${WORKDIR}/git -DexternalDirectory=${WORKDIR}/external -DdistDirectory=${WORKDIR}/dist create_dirs build.jars
 	echo $?
