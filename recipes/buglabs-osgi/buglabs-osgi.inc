@@ -33,15 +33,10 @@ addtask do_replace_ecj_with_openjdk_javac after do_patch before do_compile
 
 do_compile() {	
 	ant -Dbase.build.dir=${WORKDIR}/git/com.buglabs.osgi.build -Dcheckout.dir=${WORKDIR}/git -DexternalDirectory=${STAGING_DIR_JAVA} -DdistDirectory=${WORKDIR}/dist create_dirs build.jars
+	oe_jarinstall -s ${WORKDIR}/dist/${PN}.jar
 }
 
 do_install() {
 	install -d ${D}/${OSGI_BASE_DIR}/bundle
 	install -m ${BUNDLE_PERM} ${WORKDIR}/dist/${PN}.jar ${D}/${OSGI_BASE_DIR}/bundle/${PN}.jar
 }
-
-do_java_stage() {
-  oe_jarinstall -s ${WORKDIR}/dist/${PN}.jar
-}
-
-addtask do_java_stage after do_compile before do_package
