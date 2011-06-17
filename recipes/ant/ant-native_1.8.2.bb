@@ -2,7 +2,7 @@ DESCRIPTION = "Another Neat Tool - build system for Java"
 LICENSE = "AL2.0"
 AUTHOR = "Apache Software Foundation"
 HOMEPAGE = "http://ant.apache.org"
-PR = "r1"
+PR = "r2"
 
 
 SRC_URI = "\
@@ -15,6 +15,7 @@ S = "${WORKDIR}/apache-ant-${PV}"
 inherit java-library java-native
 
 DEPENDS = "\
+	openjdk-langtools-native \
 	fastjar-native \
 	jsch-native bsf-native xalan-j-native xerces-j-native \
 	xml-commons-resolver1.1-native gnumail-native gnujaf-native \

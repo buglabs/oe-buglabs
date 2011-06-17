@@ -2,7 +2,7 @@ DESCRIPTION = "Java Language tools (sun-javac, javah, javap, javadoc and apt) fr
 HOMEPAGE = "http://http://openjdk.java.net/groups/compiler"
 LICENSE  = "GPL"
 
-PR = "r3"
+PR = "r4"
 
 DEPENDS = "classpath-native fastjar-native ecj-initial virtual/java-native"
 
@@ -28,17 +28,16 @@ EXTRA_OECONF = "\
 
 do_stage() {
 	# Do install step manually to fine control installation names.
+	if [ -f ${STAGING_BINDIR_NATIVE}/javac ]; then
+		mv ${STAGING_BINDIR_NATIVE}/javac ${STAGING_BINDIR_NATIVE}/javac.ecj
+	fi
+	
 	install -d ${bindir}
 	install -m 0755 tools/apt ${bindir}
 	install -m 0755 tools/javadoc ${bindir}
 	install -m 0755 tools/javah ${bindir}
 	install -m 0755 tools/javap ${bindir}
-
-	# Provide javac as sun-javac to not clash with the binary of the same
-  # name in ecj-bootstrap-native.
-  # This way ecj-bootstrap-native and openjdk-langtools-native can coexist
-  # in staging dir.
-	install -m 0755 tools/javac ${bindir}/sun-javac
+	install -m 0755 tools/javac ${bindir}
 
 	install -d ${libdir}
 	install -m 0644 tools.jar ${libdir}
