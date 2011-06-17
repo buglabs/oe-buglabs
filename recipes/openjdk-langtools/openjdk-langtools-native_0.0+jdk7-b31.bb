@@ -16,15 +16,15 @@ SRC_URI = "\
 
 inherit java autotools native
 
+export JAVAC_OPTS="-bootclasspath ${STAGING_DATADIR_JAVA}/share/classpath/glibj.zip -source 5.0"
+
 EXTRA_OECONF = "\
-	--with-javac=${STAGING_BINDIR}/ecj-initial \
+	--with-javac="${STAGING_BINDIR}/ecj-initial ${JAVAC_OPTS}" \
 	--with-vm=${STAGING_BINDIR}/java \
 	--with-fastjar=${STAGING_BINDIR}/fastjar \
 	--with-classpath=${STAGING_DATADIR}/classpath/glibj.zip \
 	--with-langtools-src-dir=${WORKDIR}/openjdk-langtools-jdk7-b31 \
   "
-
-export JAVAC_OPTS="-bootclasspath ${STAGING_DATADIR_JAVA}/share/classpath/glibj.zip -source 5.0"
 
 do_stage() {
 	# Do install step manually to fine control installation names.
