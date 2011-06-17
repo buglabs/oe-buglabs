@@ -5,4 +5,7 @@ LICENSE = "BSD"
 
 PR = "${INC_PR}.1"
 
-DEPENDS += "felix-configadmin org.apache.felix.http.base"
+DEPENDS += "com.buglabs.common felix-configadmin org.apache.felix.http.base"
+RDEPENDS += "org.apache.felix.http.jetty"
+DEPENDS += "servlet2.3"
+EXTRA_CP += "servlet-2.3.1"
