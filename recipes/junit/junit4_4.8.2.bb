@@ -3,7 +3,7 @@ LICENSES = "CPL"
 AUTHOR = "junit.org"
 HOMEPAGE = "http://www.junit.org"
 
-SRC_URI = "https://github.com/downloads/KentBeck/junit/junit-${PV}-src.jar
+SRC_URI = "https://github.com/downloads/KentBeck/junit/junit-${PV}-src.jar"
 
 S = "${WORKDIR}"
 
