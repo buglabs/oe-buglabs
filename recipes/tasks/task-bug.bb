@@ -83,9 +83,7 @@ RDEPENDS_${PN}-devlangs = "\
 "
 
 RDEPENDS_${PN}-java =  " \
-				openjdk-6-jre \
-				openjdk-langtools-native \
-				ant-native \
+				openjdk-6-jre \				
 				knapsack \
 				zip \
 "
