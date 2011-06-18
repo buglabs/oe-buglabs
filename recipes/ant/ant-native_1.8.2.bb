@@ -20,7 +20,7 @@ DEPENDS = "\
 	jsch-native bsf-native xalan-j-native xerces-j-native \
 	xml-commons-resolver1.1-native gnumail-native gnujaf-native \
 	bcel-native regexp-native log4j1.2-native antlr-native oro-native \
-	junit-native jdepend-native commons-net-native commons-logging-native \
+	junit4-native jdepend-native commons-net-native commons-logging-native \
 	"
 
 do_removecruft() {
@@ -38,7 +38,7 @@ addtask removecruft before do_patch after do_unpack
 do_compile() {
   mkdir -p build
 
-  oe_makeclasspath cp -s jsch bsf xalan2 xercesImpl resolver gnumail gnujaf bcel regexp log4j1.2 antlr oro junit jdepend commons-net commons-logging
+  oe_makeclasspath cp -s jsch bsf xalan2 xercesImpl resolver gnumail gnujaf bcel regexp log4j1.2 antlr oro junit4 jdepend commons-net commons-logging
   cp=build:$cp
 
   find src/main -name "*.java" > java_files
