@@ -22,8 +22,8 @@ do_compile() {
   fastjar -C build -c -f ${JARFILENAME} .
 }
 
-SRC_URI[md5sum] = "170f9645a41398388e8553b32ff5f630"
-SRC_URI[sha256sum] = "57d1e49ee3fd0dbdc0a68a852925c973af5c30b1725b6aa63bfb42df6f7c3349"
+SRC_URI[md5sum] = "2100c46cd257afedd4f2989ba3ab5bce"
+SRC_URI[sha256sum] = "f1c006948cd26043a63f3b730043787fc8eb892230b978d0ac7a74b235907d08"
 
 NATIVE_INSTALL_WORKS = "1"
 BBCLASSEXTEND = "native"
