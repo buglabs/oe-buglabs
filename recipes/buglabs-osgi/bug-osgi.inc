@@ -1,6 +1,6 @@
 DESCRIPTION = "Bug Labs OSGi bundle: ${PN}"
 LICENSE = "BSD"
-DEPENDS = "osgi-core osgi-compendium"
+DEPENDS += "osgi-core osgi-compendium"
 
 PE = "1"
 
