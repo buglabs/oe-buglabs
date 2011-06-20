@@ -1,6 +1,6 @@
 DESCRIPTION = "Bug Labs OSGi bundle: ${PN}"
 LICENSE = "BSD"
-DEPENDS = "felix felix-log service-tracker com.buglabs.osgi felix-configadmin"
+DEPENDS = "osgi-core osgi-compendium"
 
 PE = "1"
 
