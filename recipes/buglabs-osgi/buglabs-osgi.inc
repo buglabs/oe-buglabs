@@ -2,7 +2,7 @@ inherit java
 
 OSGI_BASE_DIR ?= "/usr/share/osgi"
 
-DEPENDS += "ant-native"
+DEPENDS += "ant-native osgi-core osgi-compendium"
 
 OSGI_BASE_DIR = "/usr/share/osgi"
 SRC_URI="git://github.com/buglabs/bug-osgi.git;protocol=git;branch=${BRANCH}"
