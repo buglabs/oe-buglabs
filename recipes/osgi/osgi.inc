@@ -4,6 +4,9 @@ DEPENDS += "fastjar-native"
 
 S = "${WORKDIR}"
 
+NATIVE_INSTALL_WORKS = "1"
+BBCLASSEXTEND = "native"
+
 do_compile() {	
 	fastjar -c -m META-INF/MANIFEST.MF -f ${PN}.jar .
 }
