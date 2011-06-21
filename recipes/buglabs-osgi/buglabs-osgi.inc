@@ -8,7 +8,7 @@ OSGI_BASE_DIR = "/usr/share/osgi"
 SRC_URI="git://github.com/buglabs/bug-osgi.git;protocol=git;branch=${BRANCH}"
 BRANCH = "master"
 
-INC_PR = "r6"
+INC_PR = "r7"
 
 S = "${WORKDIR}/git/${PN}"
 
