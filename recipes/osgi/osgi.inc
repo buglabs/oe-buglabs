@@ -1,17 +1,14 @@
- 
+inherit java-library
+
 LICENSE = "http://www.osgi.org/Main/OSGiSpecificationLicense"
-DEPENDS += "fastjar-native"
 
 S = "${WORKDIR}"
 
-NATIVE_INSTALL_WORKS = "1"
-BBCLASSEXTEND = "native"
-
-do_compile() {	
-	fastjar -c -m META-INF/MANIFEST.MF -f ${PN}.jar .
+#This recipe just takes the jar file and re-jars it. 
+do_removebinaries() {
+	:
 }
 
-do_install() {
-	install -d ${D}/${OSGI_BASE_DIR}/bundle
-	install ${WORKDIR}/${PN}.jar ${D}/${OSGI_BASE_DIR}/bundle/${PN}.jar
+do_compile() {	
+	fastjar -c -m META-INF/MANIFEST.MF -f ${JARFILENAME} .
 }
