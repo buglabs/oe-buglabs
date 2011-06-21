@@ -17,7 +17,7 @@ do_compile() {
 	# Workaround for jamvm.
 	bcp=${STAGING_DATADIR_NATIVE}/classpath/glibj.zip
 
-  javac -source 5.0 -bootclasspath $bcp -sourcepath . -d build `find . -name "*.java"`
+  javac -bootclasspath $bcp -sourcepath . -d build `find . -name "*.java"`
 
   fastjar -C build -c -f ${JARFILENAME} .
 }
