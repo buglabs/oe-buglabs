@@ -94,7 +94,7 @@ RDEPENDS_${PN}-java-osgi =  " \
 				com.buglabs.app.networkinggui \
 				com.buglabs.bug.base.bug20 \
 				com.buglabs.bug.bmi \
-				com.buglabs.bug.event \
+				com.buglabs.bug.dragonfly \
 				com.buglabs.bug.jni.common \
 				com.buglabs.bug.jni.accelerometer \
 				com.buglabs.bug.jni.gps \
