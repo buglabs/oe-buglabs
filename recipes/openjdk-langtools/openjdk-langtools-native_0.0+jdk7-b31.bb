@@ -2,9 +2,9 @@ DESCRIPTION = "Java Language tools (sun-javac, javah, javap, javadoc and apt) fr
 HOMEPAGE = "http://http://openjdk.java.net/groups/compiler"
 LICENSE  = "GPL"
 
-PR = "r4"
+PR = "r5"
 
-DEPENDS = "classpath-native fastjar-native ecj-initial virtual/java-native"
+DEPENDS = "classpath-native fastjar-native ecj-initial virtual/java-native icedtea6-native"
 
 S = "${WORKDIR}/icepick-0.0+hg20080118"
 
@@ -26,10 +26,18 @@ EXTRA_OECONF = "\
 	--with-langtools-src-dir=${WORKDIR}/openjdk-langtools-jdk7-b31 \
   "
 
-do_stage() {
+do_populate_sysroot() {
 	# Do install step manually to fine control installation names.
+	
+	# Move pre-existing version of javac, prevents ecj and other remnants from executing as javac.
 	if [ -f ${STAGING_BINDIR_NATIVE}/javac ]; then
-		mv ${STAGING_BINDIR_NATIVE}/javac ${STAGING_BINDIR_NATIVE}/javac.ecj
+		mv ${STAGING_BINDIR_NATIVE}/javac ${STAGING_BINDIR_NATIVE}/javac.legacy
+	fi
+	
+	# Replace the java program with the version provided by icedtea/openjdk
+	if [ -f ${STAGING_BINDIR_NATIVE}/java ]; then
+		mv ${STAGING_BINDIR_NATIVE}/java ${STAGING_BINDIR_NATIVE}/java.legacy
+		ln -s ${STAGING_LIBDIR_NATIVE}/jvm/icedtea6-native/jre/bin/java ${STAGING_BINDIR_NATIVE}/java
 	fi
 	
 	install -d ${bindir}
