@@ -1,4 +1,4 @@
-datadir_java = ${datadir}/osgi
+datadir_java = ${datadir}/osgi/bundle
 inherit java
 
 DEPENDS += "ant-native osgi-core osgi-compendium"
@@ -6,11 +6,11 @@ DEPENDS += "ant-native osgi-core osgi-compendium"
 SRC_URI="git://github.com/buglabs/bug-osgi.git;protocol=git;branch=${BRANCH}"
 BRANCH = "master"
 
-INC_PR = "r11"
+INC_PR = "r12"
 
 S = "${WORKDIR}/git/${PN}"
 
-FILES_${PN} = "${datadir_java}/bundle/${PN}.jar"
+FILES_${PN} = "${datadir_java}/${PN}.jar"
 PACKAGE_ARCH = "all"
 
 # Must set this explicitly because it defaults to a value of 1.
@@ -25,6 +25,6 @@ do_compile() {
 }
 
 do_install() {
-	install -d ${D}/${datadir_java}/bundle
-	install -m ${BUNDLE_PERM} ${WORKDIR}/dist/${PN}.jar ${D}/${datadir_java}/bundle/${PN}.jar
+	install -d ${D}/${datadir_java}
+	install -m ${BUNDLE_PERM} ${WORKDIR}/dist/${PN}.jar ${D}/${datadir_java}/${PN}.jar
 }
