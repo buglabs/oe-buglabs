@@ -1,7 +1,7 @@
-require bug-osgi.inc
+require buglabs-osgi.inc
 inherit jni-library
 
-PR = "${INC_PR}.7+svnr${SRCREV}"
+PR = "${INC_PR}.8"
 FILES_${PN} += "${JNI_LIB_DIR}/libcgi-java.so"
 FILES_${PN} += "${JNI_LIB_DIR}/libunix-java.so"
 DEPENDS += "classpath"
