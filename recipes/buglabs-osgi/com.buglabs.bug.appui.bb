@@ -5,3 +5,4 @@ LICENSE = "BSD"
 
 PR = "${INC_PR}.5"
 DEPENDS += "com.buglabs.common"
+BUNDLE_PERM = "0744"

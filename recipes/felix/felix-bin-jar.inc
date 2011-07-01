@@ -3,7 +3,7 @@ SRC_URI = "${APACHE_MIRROR}/felix/${PN}-${PV}.jar"
 
 PACKAGE_ARCH = "all"
 S = ${WORKDIR}
-datadir_java ?= "${datadir}/java"
+datadir_java ?= "${datadir}/osgi"
 bundledir = "${datadir_java}/bundle"
 
 FILES_${PN} = "${bundledir}/${PN}.jar"
@@ -26,6 +26,6 @@ do_compile() {
 # Copy the jar from the work dir to the destination on the rootfs
 do_install() {
 	install -d ${D}${bundledir}
-	install -m 0644 ${S}/${PN}-${PV}.jar ${D}${bundledir}/${PN}.jar
+	install -m 0744 ${S}/${PN}-${PV}.jar ${D}${bundledir}/${PN}.jar
 }
 

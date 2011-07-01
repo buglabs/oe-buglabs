@@ -18,7 +18,7 @@ JARFILENAME = ${PN}.jar
 SRCREV = "d3c144cfd7d90d93b369"
 
 # Default file permissions on jar.  If jar is executable that means it should be started under knapsack.
-BUNDLE_PERM="0644"
+BUNDLE_PERM ?= "0644"
 
 do_compile() {	
 	ant -Dbase.build.dir=${WORKDIR}/git/com.buglabs.osgi.build -Dcheckout.dir=${WORKDIR}/git -DexternalDirectory=${STAGING_DIR_JAVA} -DdistDirectory=${WORKDIR}/dist create_dirs build.jars

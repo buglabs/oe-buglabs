@@ -6,4 +6,4 @@ LICENSE = "BSD"
 PR = "${INC_PR}.3"
 
 DEPENDS += "com.buglabs.common com.buglabs.bug.ws com.buglabs.bug.jni.camera com.buglabs.bug.jni.input com.buglabs.bug.jni.common"
-
+BUNDLE_PERM = "0744"
