@@ -1,6 +1,6 @@
 # Copyright (C) 2011 Bug Labs, Inc
 
-PR = "r102"
+PR = "r103"
 
 ALLOW_EMPTY = "1"
 
@@ -85,6 +85,7 @@ RDEPENDS_${PN}-devlangs = "\
 RDEPENDS_${PN}-java =  " \
 				openjdk-6-jre \				
 				knapsack \
+				knapsack-init \
 				zip \
 "
 
