@@ -19,6 +19,7 @@ FILES_${PN} += "${framedir}/default/bug.properties \
 DEPENDS = "fastjar-native knapsack"
 
 do_compile() {
+	BUILD_NUMBER ?= "0"
 	echo "bug.os.version=${BUG_RELEASE_VERSION}.${BUILD_NUMBER}" >> ${WORKDIR}/bug.properties
 }
 
