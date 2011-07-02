@@ -4,4 +4,4 @@ require buglabs-osgi.inc
 
 DESCRIPTION = "Servlet API 2.5"
 
-PR = "${INC_PR}.6"
+PR = "${INC_PR}.7"
