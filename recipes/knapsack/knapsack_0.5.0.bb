@@ -1,9 +1,9 @@
 DESCRIPTION = "Knapsack for Apache Felix"
 LICENSE = "Apache 2.0"
-PR = "r3"
+PR = "r4"
 
 BRANCH = "master"
-SRCREV = "4e7dbe0abd057d65454f"
+SRCREV = "273a00c1d252771d205c"
 S = "${WORKDIR}/git"
 
 SRC_URI = "git://github.com/kgilmer/knapsack.git;protocol=git;branch=${BRANCH}"
