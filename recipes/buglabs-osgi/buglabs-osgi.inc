@@ -9,6 +9,7 @@ BRANCH = "master"
 INC_PR = "r13"
 
 S = "${WORKDIR}/git/${PN}"
+ANT_TARGETS ?= "create_dirs build.jars"
 
 FILES_${PN} = "${datadir_java}/${PN}.jar"
 PACKAGE_ARCH = "all"
@@ -21,7 +22,7 @@ SRCREV = "197db4b61f5a67097cdd"
 BUNDLE_PERM ?= "0644"
 
 do_compile() {	
-	ant -Dbase.build.dir=${WORKDIR}/git/com.buglabs.osgi.build -Dcheckout.dir=${WORKDIR}/git -DexternalDirectory=${STAGING_DIR_JAVA} -DdistDirectory=${WORKDIR}/dist create_dirs build.jars
+	ant -Dbase.build.dir=${WORKDIR}/git/com.buglabs.osgi.build -Dcheckout.dir=${WORKDIR}/git -DexternalDirectory=${STAGING_DIR_JAVA} -DdistDirectory=${WORKDIR}/dist ${ANT_TARGETS}
 	oe_jarinstall -s ${WORKDIR}/dist/${PN}.jar
 }
 
