@@ -1,6 +1,6 @@
 require felix-bin-jar.inc
 
-PR = "2"
+PR = "r3"
 DESCRIPTION = "R4 Compliant OSGi HTTP Service using Jetty."
 
 SRC_URI[md5sum] = "71723628d859f25c6cbc9cd60898e82a"
