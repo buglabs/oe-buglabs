@@ -1,3 +1,5 @@
+ANT_TARGETS = "create_dirs build.jars append.resources"
+
 require buglabs-osgi.inc
 
 DESCRIPTION = "Enables BUG 2.0 specific hardware OSGi services."
