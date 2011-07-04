@@ -1,6 +1,6 @@
 # Copyright (C) 2011 Bug Labs, Inc
 
-PR = "r105"
+PR = "r106"
 
 ALLOW_EMPTY = "1"
 
@@ -86,6 +86,7 @@ RDEPENDS_${PN}-java =  " \
 				openjdk-6-jre \				
 				knapsack \
 				knapsack-init \
+				jetty-init \
 				zip \
 "
 
