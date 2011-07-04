@@ -1,6 +1,6 @@
 DESCRIPTION = "Initialization and startup scripts for felix on BUG"
 LICENSE = "MIT"
-PR = "r1"
+PR = "r2"
 RDEPENDS+="update-rc.d"
 
 SRC_URI = "file://bug.properties \            
