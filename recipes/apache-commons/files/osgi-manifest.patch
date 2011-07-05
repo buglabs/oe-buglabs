@@ -1,15 +1,15 @@
 Index: commons-io-2.0.1/build.xml
 ===================================================================
---- commons-io-2.0.1.orig/build.xml	2011-07-05 13:17:19.946325008 +0900
-+++ commons-io-2.0.1/build.xml	2011-07-05 13:23:43.346325008 +0900
+--- commons-io-2.0.1.orig/build.xml     2011-07-06 06:55:45.656325008 +0900
++++ commons-io-2.0.1/build.xml  2011-07-06 06:59:03.846325008 +0900
 @@ -241,6 +241,10 @@
          <attribute name="Implementation-Vendor-Id" value="org.apache"/>
          <attribute name="X-Compile-Source-JDK"     value="${compile.source}"/>
          <attribute name="X-Compile-Target-JDK"     value="${compile.target}"/>
-+	<!-- OSGi Headers -->
-+	<attribute name="Bundle-Name"     	   value="${ant.project.name}"/>
-+	<attribute name="Bundle-SymbolicName"      value="org.apache.commons.io"/>
-+	<attribute name="Export-Package"     	   value="org.apache.commons.io, org.apache.commons.io.comparator, org.apache.commons.io.filefilter, org.apache.commons.io.input, org.apache.commons.io.monitor, org.apache.commons.io.output"/>
++       <attribute name="Bundle-Name"              value="Commons IO"/>
++       <attribute name="Bundle-Version"           value="2.0.1"/>
++       <attribute name="Bundle-SymbolicName"      value="org.apache.commons.io"/>
++       <attribute name="Export-Package"           value="org.apache.commons.io, org.apache.commons.io.comparator, org.apache.commons.io.filefilter, org.apache.commons.io.input, org.apache.commons.io.monitor, org.apache.commons.io.output"/>
      </manifest>
  
      <jar jarfile="${build.home}/${final.name}.jar"

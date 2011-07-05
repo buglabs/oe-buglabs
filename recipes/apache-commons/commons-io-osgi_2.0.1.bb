@@ -9,7 +9,7 @@ SRC_URI =  "svn://svn.apache.org/repos/asf/commons/proper/io/tags;module=${BPN}-
 
 S = "${WORKDIR}/${BPN}-${PV}"
 
-PR = "r1"
+PR = "r2"
 JARFILENAME = "${S}/target/${BPN}-${PV}.jar"
 
 do_compile() {	
