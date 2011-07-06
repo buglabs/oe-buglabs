@@ -1,6 +1,8 @@
 DESCRIPTION = "Knapsack for Apache Felix"
 LICENSE = "Apache 2.0"
-PR = "r3"
+PR = "r5"
+
+inherit java
 
 BRANCH = "master"
 SRCREV = "83eb00695b272dd095cd"
@@ -18,6 +20,7 @@ do_compile() {
 }
 
 do_install() {
+	oe_jarinstall -s ${S}/${PN}.jar
 	install -d ${D}/usr/share/osgi
 	install -m 0644 ${S}/${PN}.jar ${D}/usr/share/osgi/${PN}.jar
 }
