@@ -3,10 +3,10 @@ inherit java
 
 DEPENDS += "ant-native osgi-core osgi-compendium"
 
-SRC_URI ?= "git://github.com/buglabs/bug-osgi.git;protocol=git;branch=${BRANCH}"
-BRANCH ?= "master"
+SRC_URI = "git://github.com/buglabs/bug-osgi.git;protocol=git;branch=${BRANCH}"
+BRANCH = "master"
 
-INC_PR = "r26"
+INC_PR = "r27"
 
 S ?= "${WORKDIR}/git/${PN}"
 ANT_TARGETS ?= "create_dirs build.jars"
