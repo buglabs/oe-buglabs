@@ -5,5 +5,5 @@ LICENSE = "BSD"
 
 PR = "${INC_PR}.14"
 
-DEPENDS += "felix-configadmin sprinkles commons-io-osgi"
+DEPENDS += "felix-configadmin sprinkles commons-io-osgi sprinkles"
 
