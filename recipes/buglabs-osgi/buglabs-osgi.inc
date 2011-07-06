@@ -16,7 +16,7 @@ PACKAGE_ARCH = "all"
 JARFILENAME = ${PN}.jar
 
 # Must set this explicitly because it defaults to a value of 1.
-SRCREV = "87327f4af47d60fcaa75"
+SRCREV = "180f4b3769863a6a2053"
 
 # Default file permissions on jar.  If jar is executable that means it should be started under knapsack.
 BUNDLE_PERM ?= "0644"
