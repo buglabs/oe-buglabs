@@ -6,7 +6,7 @@ DEPENDS += "ant-native osgi-core osgi-compendium"
 SRC_URI ?= "git://github.com/buglabs/bug-osgi.git;protocol=git;branch=${BRANCH}"
 BRANCH ?= "master"
 
-INC_PR = "r23"
+INC_PR = "r24"
 
 S ?= "${WORKDIR}/git/${PN}"
 ANT_TARGETS ?= "create_dirs build.jars"
@@ -16,7 +16,7 @@ PACKAGE_ARCH = "all"
 JARFILENAME = ${PN}.jar
 
 # Must set this explicitly because it defaults to a value of 1.
-SRCREV = "888ca5fe730b8cb3394d"
+SRCREV = "d1b6451c16bcb491a830"
 
 # Default file permissions on jar.  If jar is executable that means it should be started under knapsack.
 BUNDLE_PERM ?= "0644"
