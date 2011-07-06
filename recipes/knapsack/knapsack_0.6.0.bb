@@ -21,3 +21,6 @@ do_install() {
 	install -d ${D}/usr/share/osgi
 	install -m 0644 ${S}/${PN}.jar ${D}/usr/share/osgi/${PN}.jar
 }
+do_stage(){
+	install -m 0644 ${S}/${PN}.jar ${STAGING_DIR_JAVA}
+}
