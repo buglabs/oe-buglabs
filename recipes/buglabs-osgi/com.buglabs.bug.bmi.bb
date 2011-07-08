@@ -3,7 +3,7 @@ require buglabs-osgi.inc
 DESCRIPTION = "BUG Module Interface integration with OSGI applications."
 LICENSE = "BSD"
 
-PR = "${INC_PR}.3"
-DEPENDS += "com.buglabs.common com.buglabs.bug.ws"
+PR = "${INC_PR}.4"
+DEPENDS += "com.buglabs.common com.buglabs.bug.ws commons-io-osgi"
 
 BUNDLE_PERM = "0744"
