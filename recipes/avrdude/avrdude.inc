@@ -8,4 +8,4 @@ DEPENDS = "virtual/libusb0 ncurses"
 SRC_URI = "http://savannah.nongnu.org/download/avrdude/avrdude-${PV}.tar.gz"
 
 inherit autotools
-
+PARALLEL_MAKE=""

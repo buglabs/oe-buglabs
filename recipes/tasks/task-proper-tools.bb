@@ -31,7 +31,6 @@ RDEPENDS_${PN} = "\
 		mktemp \
 		module-init-tools \
 		ncurses-tools \
-		netcat \
 		inetutils \
 		net-tools \
 		openrdate \

@@ -5,7 +5,7 @@ LICENSE = "GPL"
 inherit autotools
 S = "${WORKDIR}/git"
 DEPENDS="openjdk-6 update-rc.d udev"
-
+RDEPENDS="avrdude"
 
 do_compile_append(){	
 	oe_runmake KERN_INC_DIR=${STAGING_INCDIR}/bug -C lib

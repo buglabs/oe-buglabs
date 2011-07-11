@@ -1,5 +1,5 @@
-require bug-osgi.inc
-PR = "${INC_PR}.3+svnr${SRCREV}"
+require buglabs-osgi.inc
+PR = "${INC_PR}.3"
 DEPENDS += "com.buglabs.bug.jni.libmatthew"
 JAVAC_OPTIONS="-source 1.5"
 MSGFMT="msgfmt"
@@ -15,4 +15,10 @@ do_compile() {
        ${MSGFMT} --java2 -r dbusjava_localized -d build translations/en_GB.po
        touch .classes
        javac ${JAVAC_OPTIONS} -sourcepath . -cp $cp -d build `find . -name \*.java`
+	   echo 'Bundle-BuildDate: ${DATETIME}' >> META-INF/MANIFEST.MF
+	   sed -e '/Bundle-Version/d' -e '/^$/d' META-INF/MANIFEST.MF > META-INF/MANIFEST.MF.tmp
+	   echo 'Bundle-Version: 2.5.${PR}.${SRCREV}' >> META-INF/MANIFEST.MF.tmp
+	   sed '/^[ \t]*$/d' META-INF/MANIFEST.MF.tmp > META-INF/MANIFEST.MF
+	   install -d ${WORKDIR}/dist/
+	   fastjar -0 -m ./META-INF/MANIFEST.MF -C build -c -f ${WORKDIR}/dist/${JARFILENAME} .
 }

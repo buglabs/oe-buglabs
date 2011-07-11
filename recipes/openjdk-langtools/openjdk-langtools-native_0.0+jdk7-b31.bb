@@ -2,9 +2,9 @@ DESCRIPTION = "Java Language tools (sun-javac, javah, javap, javadoc and apt) fr
 HOMEPAGE = "http://http://openjdk.java.net/groups/compiler"
 LICENSE  = "GPL"
 
-PR = "r3"
+PR = "r5"
 
-DEPENDS = "classpath-native fastjar-native ecj-initial virtual/java-native"
+DEPENDS = "classpath-native fastjar-native ecj-initial virtual/java-native icedtea6-native"
 
 S = "${WORKDIR}/icepick-0.0+hg20080118"
 
@@ -16,29 +16,36 @@ SRC_URI = "\
 
 inherit java autotools native
 
+export JAVAC_OPTS="-bootclasspath ${STAGING_DATADIR_JAVA}/share/classpath/glibj.zip -source 5.0"
+
 EXTRA_OECONF = "\
-	--with-javac=${STAGING_BINDIR}/ecj-initial \
+	--with-javac="${STAGING_BINDIR}/ecj-initial ${JAVAC_OPTS}" \
 	--with-vm=${STAGING_BINDIR}/java \
 	--with-fastjar=${STAGING_BINDIR}/fastjar \
 	--with-classpath=${STAGING_DATADIR}/classpath/glibj.zip \
 	--with-langtools-src-dir=${WORKDIR}/openjdk-langtools-jdk7-b31 \
   "
 
-export JAVAC_OPTS="-bootclasspath ${STAGING_DATADIR_JAVA}/share/classpath/glibj.zip -source 5.0"
-
-do_stage() {
+do_populate_sysroot() {
 	# Do install step manually to fine control installation names.
+	
+	# Move pre-existing version of javac, prevents ecj and other remnants from executing as javac.
+	if [ -f ${STAGING_BINDIR_NATIVE}/javac ]; then
+		mv ${STAGING_BINDIR_NATIVE}/javac ${STAGING_BINDIR_NATIVE}/javac.legacy
+	fi
+	
+	# Replace the java program with the version provided by icedtea/openjdk
+	if [ -f ${STAGING_BINDIR_NATIVE}/java ]; then
+		mv ${STAGING_BINDIR_NATIVE}/java ${STAGING_BINDIR_NATIVE}/java.legacy
+		ln -s ${STAGING_LIBDIR_NATIVE}/jvm/icedtea6-native/jre/bin/java ${STAGING_BINDIR_NATIVE}/java
+	fi
+	
 	install -d ${bindir}
 	install -m 0755 tools/apt ${bindir}
 	install -m 0755 tools/javadoc ${bindir}
 	install -m 0755 tools/javah ${bindir}
 	install -m 0755 tools/javap ${bindir}
-
-	# Provide javac as sun-javac to not clash with the binary of the same
-  # name in ecj-bootstrap-native.
-  # This way ecj-bootstrap-native and openjdk-langtools-native can coexist
-  # in staging dir.
-	install -m 0755 tools/javac ${bindir}/sun-javac
+	install -m 0755 tools/javac ${bindir}
 
 	install -d ${libdir}
 	install -m 0644 tools.jar ${libdir}
