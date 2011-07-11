@@ -5,8 +5,8 @@ LICENSE = "BSD"
 
 PR = "${INC_PR}.3"
 
-DEPENDS += "com.buglabs.common felix-configadmin org.apache.felix.http.base com.buglabs.bug.dragonfly knapsack commons-io-osgi"
-RDEPENDS += "org.apache.felix.http.jetty commons-io-osgi"
+DEPENDS += "com.buglabs.common felix-configadmin org.apache.felix.http.base com.buglabs.bug.dragonfly knapsack commons-io"
+RDEPENDS += "org.apache.felix.http.jetty"
 DEPENDS += "servlet2.3"
 EXTRA_CP += "servlet-2.3.1"
 

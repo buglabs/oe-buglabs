@@ -85,7 +85,7 @@ RDEPENDS_${PN}-devlangs = "\
 RDEPENDS_${PN}-java =  " \
 				openjdk-6-jre \		
 				sprinkles \
-				commons-io-osgi \	
+				commons-io \	
 				knapsack \
 				knapsack-init \
 				jetty-init \
