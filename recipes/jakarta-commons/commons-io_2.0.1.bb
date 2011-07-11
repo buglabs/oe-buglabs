@@ -3,7 +3,7 @@ require jakarta-commons.inc
 DEPENDS += "ant-native"
 
 DESCRIPTION = "Java library with utility classes, stream implementations, file filters and endian classes"
-PR = "r0"
+PR = "r1"
 RPROVIDES += "${PN}"
 
 SRC_URI = "http://www.apache.org/dist/commons/io/source/${BP}-src.tar.gz \
