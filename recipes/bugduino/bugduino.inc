@@ -2,31 +2,26 @@ DESCRIPTION = "Bugduino programming tools. On bug command line tool, and service
 HOMEPAGE = "http://wiki.buglabs.net/index.php/Hardware:BUGduino"
 SECTION = "bmi"
 LICENSE = "GPL"
-DEPENDS =  "TODO"
+inherit autotools
+S = "${WORKDIR}/git"
+DEPENDS="openjdk-6 update-rc.d udev"
+
 
 do_compile_append(){	
-	# build libjavabugduino.so
-	## cd lib
-	## run makefile in lib
-	# build Main.class 
-	## cd app	
-	## run makefile in app
+	oe_runmake KERN_INC_DIR=${STAGING_INCDIR}/bug -C lib
+	oe_runmake -C app
 }
 
 
-do_install_append() {
+do_install() {
 	# create /usr/bin/bugduino dir
 	install -d ${D}${bindir}/bugduino
 
 	# install Main.class into /usr/bin/bugduino
-	install -m 0755 ${WORKDIR}Main.class ${D}${bindir}/bugduino 
+	install -m 0755 ${S}/app/Main.class ${D}${bindir}/bugduino 
 	
-	install -m 0755 ${files}/run_service.sh ${D}${bindir}/bugduino 
-	# install libjavabugduino into /usr/lib/jvm/java-6-openjdk/jre/lib/arm/ 
-	install -m 755 ${WORKDIR}/libjavaduino ${D}${libdir}/jvm/java-6-openjdk/jre/lib/arm/
+	install -m 0755 ${WORKDIR}/run_service.sh ${D}${bindir}/bugduino 
+	install -d ${D}${libdir}/jvm/java-6-openjdk/jre/lib/arm/
+	install -m 755 ${S}/libjavaduino.so ${D}${libdir}/jvm/java-6-openjdk/jre/lib/arm/
 	
-	#install run_service.sh  into /usr/bin/bugduino
-	#install program_bugduino into /usr/bin/bugduino
-	install -m 0755 ${files}/run_service.sh ${D}${bindir}/bugduino 
-	install -m 0755 ${WORKDIR}/program_bugduino ${D}${bindir}/bugduino 
 }
