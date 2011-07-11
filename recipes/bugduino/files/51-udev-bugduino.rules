@@ -1,0 +1,3 @@
+KERNEL=="bmi-dev-[0123]" ACTION=="add", RUN+="/etc/udev/scripts/bugduino.sh start"
+KERNEL=="bmi-dev-[0123]" ACTION=="remove", RUN+="/etc/udev/scripts/bugduino.sh stop"
+
