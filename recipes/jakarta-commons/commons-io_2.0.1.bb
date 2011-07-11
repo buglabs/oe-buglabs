@@ -1,9 +1,11 @@
 require jakarta-commons.inc
+inherit java-osgi
 
 DEPENDS += "ant-native"
 
+PACKAGE_ARCH = "all"
 DESCRIPTION = "Java library with utility classes, stream implementations, file filters and endian classes"
-PR = "r3"
+PR = "r20"
 RPROVIDES += "${PN}"
 
 SRC_URI = "http://www.apache.org/dist/commons/io/source/${BP}-src.tar.gz"
