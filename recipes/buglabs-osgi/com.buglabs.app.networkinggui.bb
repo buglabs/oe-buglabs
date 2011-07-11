@@ -12,5 +12,5 @@ PV = "8"
 # FILES_${PN} += "/usr/share/java/apps/NetworkingGUI.jar"
 APIVERSION = "2.1"
 
-PR = "${INC_PR}.9"
+PR = "${INC_PR}.10"
 BUNDLE_PERM = "0744"
