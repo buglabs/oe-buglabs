@@ -2,7 +2,7 @@ DESCRIPTION = "bnd is a swiss army knife for OSGi."
 LICENSE = "AL2.0"
 AUTHOR = "aQute"
 HOMEPAGE = "http://www.aqute.biz/Bnd/Bnd"
-PR = "r0"
+PR = "r1"
 
 BRANCH = "master"
 SRC_URI = "git://github.com/bnd/bnd.git;protocol=git;branch=${BRANCH} \
@@ -24,6 +24,8 @@ do_compile() {
   ant 
   cp cnf/repo/biz.aQute.bnd/biz.aQute.bnd-latest.jar bnd-${PV}.jar
   cp cnf/repo/biz.aQute.bnd/biz.aQute.bnd-latest.jar bnd.jar
+  cp=${STAGING_DATADIR_JAVA_NATIVE}/bnd.jar
+  sed -i -e"s|@JAR_FILE@|$cp|" ${WORKDIR}/bnd
 }
 
 do_install_append() {
