@@ -3,7 +3,7 @@ inherit java-library
 # use java_stage for native packages
 JAVA_NATIVE_STAGE_INSTALL = "1"
 
-datadir_osgi ?= ${datadir}/osgi
+datadir_osgi ?= ${datadir}/osgi/bundle
 
 def osgi_package_name(d):
   import bb;
