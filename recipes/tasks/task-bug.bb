@@ -84,7 +84,6 @@ RDEPENDS_${PN}-devlangs = "\
 
 RDEPENDS_${PN}-java =  " \
 				openjdk-6-jre \		
-				sprinkles \
 				commons-io \	
 				knapsack \
 				knapsack-init \
@@ -126,6 +125,7 @@ RDEPENDS_${PN}-java-osgi =  " \
 				org.freedesktop.dbus \
 				bug-avahi \
 				com.buglabs.app.bugdash2 \
+				sprinkles \
 "
 
 RDEPENDS_${PN}-audio = "\
