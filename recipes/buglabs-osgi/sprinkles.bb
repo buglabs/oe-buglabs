@@ -4,11 +4,11 @@ inherit java
 DESCRIPTION = "Sprinkle functional elements in Java programs."
 LICENSE = "BSD"
 
-PR = "r4"
+PR = "r5"
 RPROVIDES += "${PN}"
 
 SRC_URI = "git://github.com/kgilmer/Sprinkles.git;protocol=git;branch=${BRANCH}"
-SRCREV = "de19867e1f96311b6d59"
+SRCREV = "ff53c6494f8a32865c36"
 BRANCH = "master"
 
 FILES_Sprinkles = "${datadir_java}/Sprinkles.jar"
