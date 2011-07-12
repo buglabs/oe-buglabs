@@ -9,12 +9,11 @@ SRC_URI = "git://github.com/bnd/bnd.git;protocol=git;branch=${BRANCH} \
 			file://bnd \
 			"
 SRCREV = ${AUTOREV}
-PARALLEL_MAKE = ""
 S = "${WORKDIR}/git"
 
 inherit java-library java-native
 
-DEPENDS = "ant-native"
+DEPENDS = "ant-native classpath"
 
 do_removebinaries() {
   :
