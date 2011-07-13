@@ -13,7 +13,7 @@ S = "${WORKDIR}/git"
 
 inherit java-library java-native
 
-DEPENDS = "ant-native classpath"
+DEPENDS = "ant-native classpath icedtea6-native"
 
 do_removebinaries() {
   :
