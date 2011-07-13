@@ -1,6 +1,6 @@
 # Copyright (C) 2011 Bug Labs, Inc
 
-PR = "r104"
+PR = "r105"
 
 ALLOW_EMPTY = "1"
 
@@ -71,7 +71,6 @@ RDEPENDS_${PN}-x11 = "\
 "
 
 RDEPENDS_${PN}-devlangs = "\
-                  ruby \
                   lua5.1 \
                   python-modules \
                   python-misc \
