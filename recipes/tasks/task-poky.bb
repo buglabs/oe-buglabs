@@ -111,8 +111,6 @@ RDEPENDS_task-poky-tools-debug = "\
     strace"
 
 RDEPENDS_task-poky-tools-profile = "\
-    oprofile \
-    oprofileui-server \
     powertop"
 
 RDEPENDS_task-poky-tools-profile_qemux86 += "valgrind"
