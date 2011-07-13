@@ -3,7 +3,7 @@
 #
 
 DESCRIPTION = "Tasks for OpenedHand Poky"
-PR = "r31"
+PR = "r32"
 
 PACKAGES = "\
     task-poky-apps-console \
