@@ -97,7 +97,6 @@ RDEPENDS_task-poky-x11-sato = "\
     matchbox-panel-2 \
     matchbox-common \
     matchbox-session \
-    matchbox-stroke \
     matchbox-config-gtk \
     matchbox-themes-gtk \
     xcursor-transparent-theme \
