@@ -13,7 +13,7 @@ BRANCH = "master"
 
 FILES_${PN} = "${datadir_java}/Sprinkles.jar"
 PACKAGE_ARCH = "all"
-JARFILENAME = Sprinkles.jar
+JARFILENAME = "Sprinkles.jar"
 
 # Default file permissions on jar.  If jar is executable that means it should be started under knapsack.
 BUNDLE_PERM ?= "0644"

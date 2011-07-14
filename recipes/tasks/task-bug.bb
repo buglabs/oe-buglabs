@@ -1,6 +1,6 @@
 # Copyright (C) 2011 Bug Labs, Inc
 
-PR = "r108"
+PR = "r109"
 
 ALLOW_EMPTY = "1"
 
@@ -85,6 +85,7 @@ RDEPENDS_${PN}-devlangs = "\
 RDEPENDS_${PN}-java =  " \
 				openjdk-6-jre \		
 				commons-io \	
+				sprinkles \
 				knapsack \
 				knapsack-init \
 				jetty-init \
@@ -125,7 +126,6 @@ RDEPENDS_${PN}-java-osgi =  " \
 				org.freedesktop.dbus \
 				bug-avahi \
 				com.buglabs.app.bugdash2 \
-				sprinkles \
 "
 
 RDEPENDS_${PN}-audio = "\
