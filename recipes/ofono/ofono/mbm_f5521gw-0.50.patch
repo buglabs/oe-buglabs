@@ -1,0 +1,123 @@
+
+diff --git a/ofono-0.50.orig/gatchat/gattty.c b/ofono-0.50/gatchat/gattty.c
+index 02ca389..9e06f69 100644
+--- a/gatchat/gattty.c
++++ b/gatchat/gattty.c
+@@ -193,6 +193,7 @@ static int open_device(const char *tty, GHashTable *options)
+ {
+ 	struct termios ti;
+ 	int fd;
++        gboolean extraFlush;
+ 
+ 	/* Switch TTY to raw mode */
+ 	memset(&ti, 0, sizeof(ti));
+@@ -224,6 +225,8 @@ static int open_device(const char *tty, GHashTable *options)
+ 				ok = set_local(value, &ti);
+ 			else if (g_str_equal(key, "Read"))
+ 				ok = set_read(value, &ti);
++			else if (g_str_equal(key, "ExtraFlush"))
++				extraFlush = TRUE;
+ 
+ 			if (ok == FALSE)
+ 				return -1;
+@@ -237,5 +240,9 @@ static int open_device(const char *tty, GHashTable *options)
+ 	tcflush(fd, TCIOFLUSH);
+ 	tcsetattr(fd, TCSANOW, &ti);
+ 
++        if (extraFlush) {
++		tcflush(fd, TCIOFLUSH);
++		tcflush(fd, TCIOFLUSH);
++        }
+ 	return fd;
+ }
+diff --git a/ofono-0.50.orig/plugins/mbm.c b/ofono-0.50/plugins/mbm.c
+index 105843f..27c468c 100644
+--- a/plugins/mbm.c
++++ b/plugins/mbm.c
+@@ -284,13 +284,31 @@ static void emrdy_query(gboolean ok, GAtResult *result, gpointer user_data)
+ 					cfun_query, modem, NULL);
+ };
+ 
+-static GAtChat *create_port(const char *device)
++static GAtChat *create_port(const char *device, struct ofono_modem *modem)
+ {
+ 	GAtSyntax *syntax;
+ 	GIOChannel *channel;
+ 	GAtChat *chat;
++	GHashTable *options;
++
++	if (ofono_modem_get_integer(modem, "F5521gw")) {
++		options = g_hash_table_new(g_str_hash, g_str_equal);
++
++		if (options == NULL)
++			return -ENOMEM;
++
++		g_hash_table_insert(options, "Baud", "115200");
++		g_hash_table_insert(options, "Parity", "none");
++		g_hash_table_insert(options, "StopBits", "1");
++		g_hash_table_insert(options, "DataBits", "8");
++
++		channel = g_at_tty_open(device, options);
++
++		g_hash_table_destroy(options);
++        } else {
++		channel = g_at_tty_open(device, options);
++        }
+ 
+-	channel = g_at_tty_open(device, NULL);
+ 	if (channel == NULL)
+ 		return NULL;
+ 
+@@ -317,7 +335,7 @@ static gboolean reopen_callback(gpointer user_data)
+ 
+ 	data_dev = ofono_modem_get_string(modem, "DataDevice");
+ 
+-	data->data_port = create_port(data_dev);
++	data->data_port = create_port(data_dev, data);
+ 	if (data->data_port == NULL)
+ 		return FALSE;
+ 
+@@ -376,14 +394,14 @@ static int mbm_enable(struct ofono_modem *modem)
+ 	if (modem_dev == NULL || data_dev == NULL)
+ 		return -EINVAL;
+ 
+-	data->modem_port = create_port(modem_dev);
++	data->modem_port = create_port(modem_dev, modem);
+ 	if (data->modem_port == NULL)
+ 		return -EIO;
+ 
+ 	if (getenv("OFONO_AT_DEBUG"))
+ 		g_at_chat_set_debug(data->modem_port, mbm_debug, "Modem: ");
+ 
+-	data->data_port = create_port(data_dev);
++	data->data_port = create_port(data_dev, modem);
+ 	if (data->data_port == NULL) {
+ 		g_at_chat_unref(data->modem_port);
+ 		data->modem_port = NULL;
+diff --git a/ofono-0.50.orig/plugins/udev.c b/ofono-0.50/plugins/udev.c
+index 99303e9..f3beca9 100644
+--- a/plugins/udev.c
++++ b/plugins/udev.c
+@@ -105,9 +105,11 @@ static void add_mbm(struct ofono_modem *modem,
+ 					struct udev_device *udev_device)
+ {
+ 	const char *desc, *devnode;
+-	const char *device, *data, *network;
++	const char  *device, *data, *network;
+ 	int registered;
+ 
++	struct udev_list_entry *entry;
++
+ 	desc = udev_device_get_sysattr_value(udev_device, "device/interface");
+ 
+ 	if (desc == NULL)
+@@ -151,6 +153,9 @@ static void add_mbm(struct ofono_modem *modem,
+ 		return;
+ 	}
+ 
++	gboolean f5521gw = g_str_has_prefix(desc, "F5521gw");
++	ofono_modem_set_integer(modem, "F5521gw", f5521gw);
++
+ 	if (registered == 1)
+ 		return;
+ 

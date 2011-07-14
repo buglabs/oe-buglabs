@@ -4,6 +4,8 @@ PR = "${INC_PR}.0"
 
 SRC_URI  = "http://www.kernel.org/pub/linux/network/ofono/${P}.tar.bz2 \
 #            file://sierra-mc8790.patch \
+            file://mbm_f5521gw-0.50.patch \
+            file://boolean_property-0.50.patch \
             file://ofono"
 
 
