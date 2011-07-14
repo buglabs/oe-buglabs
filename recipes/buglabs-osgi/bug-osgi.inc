@@ -1,6 +1,6 @@
 DESCRIPTION = "Bug Labs OSGi bundle: ${PN}"
 LICENSE = "BSD"
-DEPENDS = "felix felix-log service-tracker com.buglabs.osgi felix-configadmin"
+DEPENDS += "osgi-core osgi-compendium"
 
 PE = "1"
 
@@ -49,7 +49,7 @@ addtask jar_package after do_compile before do_install
 do_jar_package() {
   echo 'Bundle-BuildDate: ${DATETIME}' >> META-INF/MANIFEST.MF
   sed -e '/Bundle-Version/d' -e '/^$/d' META-INF/MANIFEST.MF > META-INF/MANIFEST.MF.tmp
-  echo 'Bundle-Version: 2.0.${SRCREV}' >> META-INF/MANIFEST.MF.tmp
+  echo 'Bundle-Version: 2.5.${PR}.${SRCREV}' >> META-INF/MANIFEST.MF.tmp
   sed '/^[ \t]*$/d' META-INF/MANIFEST.MF.tmp > META-INF/MANIFEST.MF
   fastjar -0 -m ./META-INF/MANIFEST.MF -C build -c -f ${JARFILENAME} .
 }

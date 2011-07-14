@@ -1,6 +1,7 @@
-require bug-osgi.inc
+require buglabs-osgi.inc
 inherit jni-library
-PR = "r4"
+
+PR = "r5"
 FILES_${PN} += "${JNI_LIB_DIR}/librxtxParallel.so"
 FILES_${PN} += "${JNI_LIB_DIR}/librxtxRaw.so"
 FILES_${PN} += "${JNI_LIB_DIR}/librxtxSerial.so"

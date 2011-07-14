@@ -1,6 +1,8 @@
 require iproute2.inc
 
-PR = "${INC_PR}.0"
+PARALLEL_MAKE=""
+
+PR = "${INC_PR}.1"
 
 # There is no tarball for v2.6.35.1, but there is a tag.
 SRCREV = "v${PV}"

@@ -1,8 +1,11 @@
-require bug-osgi.inc
-DEPENDS += "com.buglabs.common servlet2.3 felix-configadmin com.buglabs.osgi.http org.freedesktop.dbus com.buglabs.bug.jni.libmatthew"
-RDEPENDS += "com.buglabs.osgi.http connman"
+require buglabs-osgi.inc
+DESCRIPTION = "BUG Connman/DBUS networking API"
+LICENSE = "BSD"
+
+DEPENDS += "com.buglabs.common servlet2.3 org.freedesktop.dbus com.buglabs.bug.jni.libmatthew"
+RDEPENDS += "org.apache.felix.http.jetty connman"
 EXTRA_CP += "servlet-2.3.1"
 
-SRCREV = "13126"
+PR = "${INC_PR}.3"
+BUNDLE_PERM = "0744"
 
-PR = "${INC_PR}.0+svnr${SRCREV}"

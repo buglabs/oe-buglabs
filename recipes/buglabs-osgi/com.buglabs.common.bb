@@ -1,3 +1,9 @@
-require bug-osgi.inc
-PR = "${INC_PR}.9+svnr${SRCREV}"
-DEPENDS += "felix-configadmin"
+require buglabs-osgi.inc
+
+DESCRIPTION = "Common code for BUG OSGi bundles."
+LICENSE = "BSD"
+
+PR = "${INC_PR}.16"
+
+DEPENDS += "felix-configadmin sprinkles commons-io sprinkles"
+
