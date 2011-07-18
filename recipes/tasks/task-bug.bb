@@ -1,6 +1,6 @@
 # Copyright (C) 2011 Bug Labs, Inc
 
-PR = "r109"
+PR = "r110"
 
 ALLOW_EMPTY = "1"
 
@@ -141,7 +141,7 @@ RDEPENDS_${PN}-audio = "\
                   alsa-utils-alsactl \
 "
 
-ECONFIG ?= "e-wm-config-default e-wm-config-illume2 e-wm-config-buglabs"
+ECONFIG ?= "e-wm-config-buglabs"
 EMENU ?= "e-wm-menu-shr"
 
 RDEPENDS_${PN}-e17 = " \
