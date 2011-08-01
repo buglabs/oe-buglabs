@@ -1,6 +1,6 @@
 # Copyright (C) 2011 Bug Labs, Inc
 
-PR = "r108"
+PR = "r109"
 
 ALLOW_EMPTY = "1"
 
@@ -85,8 +85,8 @@ RDEPENDS_${PN}-devlangs = "\
 
 RDEPENDS_${PN}-java =  " \
 				openjdk-6-jre \		
-				sprinkles \
 				commons-io \	
+				sprinkles \
 				knapsack \
 				knapsack-init \
 				jetty-init \

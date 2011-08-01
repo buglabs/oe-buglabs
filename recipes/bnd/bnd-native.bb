@@ -2,7 +2,7 @@ DESCRIPTION = "bnd is a swiss army knife for OSGi."
 LICENSE = "AL2.0"
 AUTHOR = "aQute"
 HOMEPAGE = "http://www.aqute.biz/Bnd/Bnd"
-PR = "r2"
+PR = "r3"
 
 BRANCH = "master"
 SRC_URI = "git://github.com/bnd/bnd.git;protocol=git;branch=${BRANCH} \
@@ -13,7 +13,7 @@ S = "${WORKDIR}/git"
 
 inherit java-library java-native
 
-DEPENDS = "ant-native classpath"
+DEPENDS = "ant-native classpath icedtea6-native openjdk-langtools-native"
 
 do_removebinaries() {
   :
