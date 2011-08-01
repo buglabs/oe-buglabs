@@ -4,7 +4,7 @@ SECTION = "x11"
 PRIORITY = "optional"
 RDEPENDS_${PN} = "xserver-common (>= 1.30) xinit"
 DEFAULT_PREFERENCE = "-1"
-PR = "r4"
+PR = "r5"
 
 SRC_URI = "file://xserver-nodm"
 S = ${WORKDIR}
@@ -20,5 +20,4 @@ do_install() {
 inherit update-rc.d
 
 INITSCRIPT_NAME = "xserver-nodm"
-INITSCRIPT_PARAMS = "start 01 5 2 . stop 01 0 1 6 ."
-INITSCRIPT_PARAMS_shr = "start 90 5 2 . stop 90 0 1 6 ."
+INITSCRIPT_PARAMS = "start 90 5 2 . stop 90 0 1 6 ."

@@ -1,5 +1,7 @@
 DESCRIPTION = "Additional packages for Bug Labs repository."
 
+PR = "r13"
+
 DEPENDS = "\
 	curl \
 	dosfstools \
@@ -18,7 +20,6 @@ DEPENDS = "\
 	cacao \
 	usb-modeswitch \
 #	com.buglabs.bug.jni.bluecove \
-    gdbserver \
+	gdbserver \
+	ruby \
 	"
-
-PR = "r12"
