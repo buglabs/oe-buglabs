@@ -1,11 +1,11 @@
 DESCRIPTION = "Knapsack for Apache Felix"
 LICENSE = "Apache 2.0"
-PR = "r6"
+PR = "r0"
 
 inherit java
 
 BRANCH = "master"
-SRCREV = "e66f965a5aa7738fc279"
+SRCREV = "3dacc3e3c2ec206b7e4a"
 S = "${WORKDIR}/git"
 
 SRC_URI = "git://github.com/kgilmer/knapsack.git;protocol=git;branch=${BRANCH}"

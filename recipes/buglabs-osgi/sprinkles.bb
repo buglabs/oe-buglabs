@@ -1,11 +1,11 @@
 DESCRIPTION = "Sprinkle functional elements in Java programs."
 LICENSE = "BSD"
-PR = "r11"
+PR = "r12"
 
 inherit java
 
 SRC_URI = "git://github.com/kgilmer/Sprinkles.git;protocol=git;branch=${BRANCH}"
-SRCREV = "ff53c6494f8a32865c36"
+SRCREV = "3a29739466421f03205c"
 BRANCH = "master"
 
 S = "${WORKDIR}/git"
