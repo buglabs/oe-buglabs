@@ -5,7 +5,7 @@ PR = "r0"
 inherit java
 
 BRANCH = "master"
-SRCREV = "3dacc3e3c2ec206b7e4a"
+SRCREV = "e25b214a114c5c425dc1"
 S = "${WORKDIR}/git"
 
 SRC_URI = "git://github.com/kgilmer/knapsack.git;protocol=git;branch=${BRANCH}"
