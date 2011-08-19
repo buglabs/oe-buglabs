@@ -1,7 +1,6 @@
-PR = "r13"
+PR = "r14"
 
 DEPENDS = "task-bug task-x11-illume"
-IMAGE_FEATURES += "apps-console-core"
 
 inherit bug-image
 
