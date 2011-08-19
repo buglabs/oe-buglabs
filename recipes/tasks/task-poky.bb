@@ -3,7 +3,7 @@
 #
 
 DESCRIPTION = "Tasks for OpenedHand Poky"
-PR = "r31"
+PR = "r32"
 
 PACKAGES = "\
     task-poky-apps-console \
@@ -97,7 +97,6 @@ RDEPENDS_task-poky-x11-sato = "\
     matchbox-panel-2 \
     matchbox-common \
     matchbox-session \
-    matchbox-stroke \
     matchbox-config-gtk \
     matchbox-themes-gtk \
     xcursor-transparent-theme \
@@ -111,8 +110,6 @@ RDEPENDS_task-poky-tools-debug = "\
     strace"
 
 RDEPENDS_task-poky-tools-profile = "\
-    oprofile \
-    oprofileui-server \
     powertop"
 
 RDEPENDS_task-poky-tools-profile_qemux86 += "valgrind"

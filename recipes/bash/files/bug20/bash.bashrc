@@ -45,6 +45,5 @@ export EDITOR=vim
 export GREP_OPTIONS='--color=auto'
 alias vi=vim
 alias ipkg=opkg
-export TERM=ansi
 export PROMPT_COMMAND="history -a"
 export DISPLAY=:0.0

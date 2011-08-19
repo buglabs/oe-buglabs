@@ -1,4 +1,4 @@
-PR = "r5"
+PR = "r6"
 
 DEPENDS = "task-bug task-x11-illume"
 IMAGE_FEATURES += "apps-console-core"
@@ -16,4 +16,5 @@ IMAGE_INSTALL += "task-base-extended \
 		task-bug-e17 \
 		bash-sh \
 		task-bug-debug \
+		task-bug-docs \
 		"
