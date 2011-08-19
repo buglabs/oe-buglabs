@@ -1,29 +1,3 @@
-# Available IMAGE_FEATURES:
-# - apps-console-core
-# - x11-base            - X11 server + minimal desktop
-# - x11-sato            - OpenedHand Sato environment
-# - dev-pkgs            - development packages
-# - dbg-pkgs            - debug packages
-
-DISTRO_TASKS += '\
-    ${@base_contains("IMAGE_FEATURES", "apps-console-core", "task-poky-apps-console", "",d)} \
-    ${@base_contains("IMAGE_FEATURES", ["apps-console-core", "dbg-pkgs"], "task-poky-apps-console-dbg", "",d)} \
-    ${@base_contains("IMAGE_FEATURES", ["apps-console-core", "dev-pkgs"], "task-poky-apps-console-dev", "",d)} \
-    \
-    ${@base_contains("IMAGE_FEATURES", "x11-base", "task-poky-x11-base", "",d)} \
-    ${@base_contains("IMAGE_FEATURES", ["x11-base", "dbg-pkgs"], "task-poky-x11-base-dbg", "",d)} \
-    ${@base_contains("IMAGE_FEATURES", ["x11-base", "dev-pkgs"], "task-poky-x11-base-dev", "",d)} \
-    \
-    ${@base_contains("IMAGE_FEATURES", "x11-sato", "task-poky-x11-sato", "",d)} \
-    ${@base_contains("IMAGE_FEATURES", ["x11-sato", "dbg-pkgs"], "task-poky-x11-sato-dbg", "",d)} \
-    ${@base_contains("IMAGE_FEATURES", ["x11-sato", "dev-pkgs"], "task-poky-x11-sato-dev", "",d)} \
-    '
-
-IMAGE_INSTALL ?= "${DISTRO_TASKS}"
-
-X11_IMAGE_FEATURES  = "x11-base"
-SATO_IMAGE_FEATURES = "${X11_IMAGE_FEATURES} apps-x11-sato"
-
 #set these variables to defaults if not already set
 #BUILD_URL ?= ""
 BUG_RELEASE_VERSION ?= "0.0"
