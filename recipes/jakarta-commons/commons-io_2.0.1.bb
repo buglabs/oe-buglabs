@@ -5,7 +5,7 @@ DEPENDS += "ant-native"
 
 PACKAGE_ARCH = "all"
 DESCRIPTION = "Java library with utility classes, stream implementations, file filters and endian classes"
-PR = "r20"
+PR = "r21"
 RPROVIDES += "${PN}"
 OSGI_PACKAGE_EXPORT_VERSION = "2.0.1"
 
