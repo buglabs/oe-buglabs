@@ -37,7 +37,13 @@ JARFILENAME = "${BP}.jar"
 ALTJARFILENAMES = "${BPN}.jar"
 
 do_install_append() {
-	bnd wrap -output ${BP}-osgi.jar ${BP}.jar
+	if [ -z "${OSGI_PACKAGE_EXPORT_VERSION}" ]; then
+		bnd wrap -output ${BP}-osgi.jar ${BP}.jar
+	else
+		echo "Export-Package: *;version=${OSGI_PACKAGE_EXPORT_VERSION}" > ${S}/bnd.properties
+		bnd wrap -properties ${S}/bnd.properties -output ${BP}-osgi.jar ${BP}.jar
+	fi
+	
 	oe_osgijarinstall ${BP}-osgi.jar
 }
 
