@@ -1,6 +1,6 @@
 # Copyright (C) 2011 Bug Labs, Inc
 
-PR = "r110"
+PR = "r111"
 
 ALLOW_EMPTY = "1"
 
@@ -40,6 +40,9 @@ RDEPENDS_${PN}-network = "\
 		  connman-test-utils \
 		  ppp-scripts \
 		  ofono \
+		  avahi-daemon \
+		  dropbear \
+		  portmap \
 "
 
 RDEPENDS_${PN}-x11-debug = "\
@@ -61,8 +64,6 @@ RDEPENDS_${PN}-docs = "\
 
 RDEPENDS_${PN}-x11 = "\
                   dbus-x11 \
-                  matchbox-theme-bug-dark \
-                  mb-bug-icon-theme \
                   pcmanfm \
                   bug-reboot-icon \
                   bug-shutdown-icon \
