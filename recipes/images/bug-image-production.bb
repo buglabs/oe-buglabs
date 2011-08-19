@@ -1,15 +1,20 @@
-# Copyright (C) 2008 Bug Labs, Inc
-# Based on poky-image-sato.bb from Open Hand, Ltd.
-#
-# Image that defines BUG R1.4 production rootfs image.
-#
+PR = "r13"
 
-PR = "r12"
-
-DEPENDS = "task-bug"
-IMAGE_FEATURES += "apps-console-core apps-x11-sato ${X11_IMAGE_FEATURES}"
+DEPENDS = "task-bug task-x11-illume"
+IMAGE_FEATURES += "apps-console-core"
 
 inherit bug-image
 
 # These are the base system recipes
-IMAGE_INSTALL += "task-base-extended task-bug task-bug-java-osgi task-bug-audio task-bug-x11 task-bug-devlangs task-bug-network bash-sh task-bug-debug task-bug-docs"
+IMAGE_INSTALL += "task-base-extended \
+		task-bug \
+		task-bug-java-osgi \
+		task-bug-audio \
+		task-bug-x11 \
+		task-bug-devlangs \
+		task-bug-network \
+		task-bug-e17 \
+		bash-sh \
+		task-bug-debug \
+		task-bug-docs \
+		"
