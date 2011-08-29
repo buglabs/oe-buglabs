@@ -4,8 +4,6 @@ DESCRIPTION = "R4 Compliant OSGi logger bundle"
 
 PR = "${INC_PR}.1"
 
-RCONFLICTS="concierge"
-
 FQPN="org.apache.felix.log"
 
 datadir_java = ${datadir}/java/bundle/

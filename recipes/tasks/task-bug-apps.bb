@@ -104,7 +104,7 @@ RDEPENDS = " \
 #	com.buglabs.app.simapp \
 	com.buglabs.app.simplebatterymanager \
 #	com.buglabs.app.simplecamera \
-	com.buglabs.app.simpleconciergelogviewerxws \
+#	com.buglabs.app.simpleconciergelogviewerxws \
 	com.buglabs.app.simplegame \
 	com.buglabs.app.simpleguicloser \
 	com.buglabs.app.simpleguimaze \
