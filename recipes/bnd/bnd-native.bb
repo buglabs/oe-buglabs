@@ -2,13 +2,13 @@ DESCRIPTION = "bnd is a swiss army knife for OSGi."
 LICENSE = "AL2.0"
 AUTHOR = "aQute"
 HOMEPAGE = "http://www.aqute.biz/Bnd/Bnd"
-PR = "r3"
+PR = "r4"
 
 BRANCH = "master"
 SRC_URI = "git://github.com/bnd/bnd.git;protocol=git;branch=${BRANCH} \
 			file://bnd \
 			"
-SRCREV = ${AUTOREV}
+SRCREV = "455e54c589c0063560d9"
 S = "${WORKDIR}/git"
 
 inherit java-library java-native
