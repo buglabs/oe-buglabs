@@ -1,5 +1,5 @@
 require bug-osgi.inc
-DEPENDS += "servlet2.3 service-tracker"
+DEPENDS += "servlet2.3"
 EXTRA_CP += "servlet-2.3.1"
 PR = "${INC_PR}.3+svnr${SRCREV}"
 do_compile() {

@@ -4,7 +4,7 @@ require buglabs-osgi.inc
 DESCRIPTION = "NetworkingGUI provides a GUI for configuring the network."
 HOMEPAGE = "http://www.buglabs.net/applications/NetworkingGUI"
 
-DEPENDS += "service-tracker com.buglabs.common com.buglabs.bug.module.lcd com.buglabs.bug.networking"
+DEPENDS += "com.buglabs.common com.buglabs.bug.module.lcd com.buglabs.bug.networking"
 
 PV = "10"
 

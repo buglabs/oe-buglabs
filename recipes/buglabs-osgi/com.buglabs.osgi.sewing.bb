@@ -6,4 +6,4 @@ LICENSE = "BSD"
 PR = "${INC_PR}.4"
 BUNDLE_PERM = "0744"
 
-DEPENDS += "com.buglabs.common service-tracker org.apache.felix.http.jetty"
+DEPENDS += "com.buglabs.common org.apache.felix.http.jetty"
