@@ -1,6 +1,6 @@
 DESCRIPTION = "Initialization and startup scripts for felix on BUG"
 LICENSE = "MIT"
-PR = "r4"
+PR = "r5"
 RDEPENDS+="update-rc.d"
 
 SRC_URI = "file://bug.properties \            
@@ -11,7 +11,7 @@ framedir = "/usr/share/osgi"
 
 PACKAGE_ARCH = "${MACHINE_ARCH}"
 
-FILES_${PN} += "${framedir}/default/bug.properties \
+FILES_${PN} += "${framedir}/properties/bug.properties \
                 /etc/init.d/knapsack \
                 /etc/init.d/knapsack-debug \
                 "
@@ -26,8 +26,8 @@ do_compile() {
 addtask init_install before do_package after do_install
 do_init_install() {
         install -d ${D}${framedir}
-        install -d ${D}${framedir}/default
-        install -m 0644 ${WORKDIR}/bug.properties ${D}${framedir}/default/
+        install -d ${D}${framedir}/properties
+        install -m 0644 ${WORKDIR}/bug.properties ${D}${framedir}/properties/
         install -d ${D}/etc
         install -d ${D}/etc/init.d
         install -m 0755 ${WORKDIR}/knapsack ${D}/etc/init.d
