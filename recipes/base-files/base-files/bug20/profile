@@ -37,3 +37,5 @@ export PATH PS1 OPIEDIR QPEDIR QTDIR EDITOR TERM
 
 umask 022
 
+# for knapsack (OSGi) commands in terminal
+PATH=$PATH:/usr/share/osgi/bin/
