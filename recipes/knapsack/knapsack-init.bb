@@ -1,6 +1,6 @@
 DESCRIPTION = "Initialization and startup scripts for felix on BUG"
 LICENSE = "MIT"
-PR = "r6"
+PR = "r7"
 RDEPENDS+="update-rc.d"
 
 SRC_URI = "file://knapsack.properties \            
