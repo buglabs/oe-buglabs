@@ -1,6 +1,6 @@
 DESCRIPTION = "Knapsack for Apache Felix"
 LICENSE = "Apache 2.0"
-PR = "r2"
+PR = "r0"
 
 inherit java
 
