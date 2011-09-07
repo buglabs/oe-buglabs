@@ -6,10 +6,12 @@ DEPENDS += "ant-native osgi-core osgi-compendium"
 SRC_URI = "git://github.com/buglabs/bug-osgi.git;protocol=git;branch=${BRANCH}"
 BRANCH = "master"
 
-INC_PR = "r37"
+INC_PR = "r38"
 
 S = "${WORKDIR}/git/${PN}"
 ANT_TARGETS ?= "create_dirs build.jars"
+
+CXXFLAGS += " -fPIC"
 
 FILES_${PN} = "${datadir_java}/${PN}.jar"
 PACKAGE_ARCH = "all"
@@ -21,7 +23,7 @@ SRCREV = ${AUTOREV}
 # Default file permissions on jar.  If jar is executable that means it should be started under knapsack.
 BUNDLE_PERM ?= "0644"
 
-do_compile() {	
+do_compile() {
 	ant -v -Dbase.build.dir=${WORKDIR}/git/com.buglabs.osgi.build -Dcheckout.dir=${WORKDIR}/git -DexternalDirectory=${STAGING_DIR_JAVA} -DdistDirectory=${WORKDIR}/dist ${ANT_TARGETS}
 	oe_jarinstall -s ${WORKDIR}/dist/${PN}.jar
 }
