@@ -32,5 +32,8 @@ else
 	cp oe-buglabs/buglabs-scripts/local.conf conf/
 fi
 
+# Writing in any case, local.conf stays for user changes
+cp oe-buglabs/buglabs-scripts/local-distro.conf conf/
+
 echo $BBPATH
 echo "Configuring done."

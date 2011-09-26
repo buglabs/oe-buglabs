@@ -13,6 +13,8 @@ fi
 
 if [ -f conf/local.conf ]; then
 	echo "Configuration already exists, not changing."
+	# Writing in any case, local.conf stays for user changes
+	cp oe-buglabs/buglabs-scripts/local-distro.conf conf/
 	exit
 fi
 
@@ -21,6 +23,8 @@ if [ ! -d conf ]; then
 fi
 
 cp oe-buglabs/buglabs-scripts/local.conf conf/
+# Writing in any case, local.conf stays for user changes
+cp oe-buglabs/buglabs-scripts/local-distro.conf conf/
 
 # Modify the script variables as specified in parameters
 mv conf/local.conf conf/local.conf.tmp

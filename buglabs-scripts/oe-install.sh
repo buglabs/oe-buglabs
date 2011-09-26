@@ -16,7 +16,7 @@ if [ ! -d bitbake-1.12.0 ]; then
 	echo "Installing BitBake"
     wget http://download.berlios.de/bitbake/bitbake-1.12.0.tar.gz
     tar xf bitbake-1.12.0.tar.gz
-    
+
     echo "If you get internal bitbake erros, install python-ply and python-progressbar packages."
 fi
 

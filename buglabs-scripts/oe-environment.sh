@@ -12,6 +12,9 @@ if [ ! -d conf ]; then
 	exit 1
 fi
 
+# Writing in any case, local.conf stays for user changes
+cp oe-buglabs/buglabs-scripts/local-distro.conf conf/
+
 # TOPDIR is where we are now
 TOPDIR=`pwd`
 
