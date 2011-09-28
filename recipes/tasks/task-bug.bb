@@ -127,6 +127,8 @@ RDEPENDS_${PN}-java-osgi =  " \
 				org.freedesktop.dbus \
 				bug-avahi \
 				com.buglabs.app.bugdash2 \
+				smack-smackx-osgi \
+				bugswarm-connector \
 "
 
 RDEPENDS_${PN}-audio = "\
