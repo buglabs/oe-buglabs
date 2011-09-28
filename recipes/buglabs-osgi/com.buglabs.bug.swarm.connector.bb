@@ -1,10 +1,14 @@
-require bug-osgi.inc
+ANT_TARGETS = "create_dirs build build.jars"
+
+BRANCH = "master"
+SRC_URI = "git@github.com:buglabs/bugswarm-connector.git;branch=${BRANCH}"
+
+
+require buglabs-osgi.inc
+
+DESCRIPTION = "BUGswarm connector enables BUG applications to integrate with BUGswarm"
+LICENSE = "ASL"
+
+PR = "${INC_PR}.0"
+
 DEPENDS += "com.buglabs.common felix-configadmin org.apache.felix.http.jetty servlet2.3 com.buglabs.osgi.sewing"
-
-PR = "${INC_PR}.0+svnr${SRCREV}"
-
-SRC_URI = "svn://bugcamp.net/swarm/trunk;module=${PN};proto=svn "
-
-PREFERRED_PROVIDER_virtual/javac-native = "openjdk-javac-native"
-JAVAC_COMMAND = "sun-javac"
-JAVAC_OPTIONS += " -bootclasspath ${STAGING_LIBDIR_JVM_NATIVE}/icedtea6-native/jre/lib/rt.jar"
