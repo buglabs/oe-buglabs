@@ -1,8 +1,7 @@
 ANT_TARGETS = "create_dirs build build.jars"
 
 BRANCH = "master"
-SRC_URI = "git@github.com:buglabs/bugswarm-connector.git;branch=${BRANCH}"
-
+SRC_URI = "git@github.com:buglabs/bugswarm-connector.git;protocol=git;branch=${BRANCH}"
 
 require buglabs-osgi.inc
 
