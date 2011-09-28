@@ -3,10 +3,10 @@ inherit java
 
 DEPENDS += "ant-native osgi-core osgi-compendium"
 
-SRC_URI = "git://github.com/buglabs/bug-osgi.git;protocol=git;branch=${BRANCH}"
-BRANCH = "master"
+SRC_URI ?= "git://github.com/buglabs/bug-osgi.git;protocol=git;branch=${BRANCH}"
+BRANCH ?= "master"
 
-INC_PR = "r37"
+INC_PR ?= "r37"
 
 S = "${WORKDIR}/git/${PN}"
 ANT_TARGETS ?= "create_dirs build.jars"
@@ -22,6 +22,7 @@ SRCREV = ${AUTOREV}
 BUNDLE_PERM ?= "0644"
 
 do_compile() {	
+	echo "Running ant in: `pwd`"
 	ant -v -Dbase.build.dir=${WORKDIR}/git/com.buglabs.osgi.build -Dcheckout.dir=${WORKDIR}/git -DexternalDirectory=${STAGING_DIR_JAVA} -DdistDirectory=${WORKDIR}/dist ${ANT_TARGETS}
 	oe_jarinstall -s ${WORKDIR}/dist/${PN}.jar
 }
