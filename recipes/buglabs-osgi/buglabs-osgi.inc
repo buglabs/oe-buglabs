@@ -22,7 +22,6 @@ SRCREV = ${AUTOREV}
 BUNDLE_PERM ?= "0644"
 
 do_compile() {	
-	echo "Running ant in: `pwd`"
 	ant -v -Dbase.build.dir=${WORKDIR}/git/com.buglabs.osgi.build -Dcheckout.dir=${WORKDIR}/git -DexternalDirectory=${STAGING_DIR_JAVA} -DdistDirectory=${WORKDIR}/dist ${ANT_TARGETS}
 	oe_jarinstall -s ${WORKDIR}/dist/${PN}.jar
 }
