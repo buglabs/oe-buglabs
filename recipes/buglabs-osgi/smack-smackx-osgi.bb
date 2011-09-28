@@ -2,7 +2,7 @@ ANT_TARGETS = "create_dirs build.jars"
 
 BRANCH = "master"
 SRC_URI = "git://github.com/buglabs/smack-smackx-osgi.git;protocol=git;branch=${BRANCH}"
-
+S = "${WORKDIR}/git"
 
 require buglabs-osgi.inc
 

@@ -8,7 +8,7 @@ BRANCH ?= "master"
 
 INC_PR ?= "r37"
 
-S = "${WORKDIR}/git/${PN}"
+S ?= "${WORKDIR}/git/${PN}"
 ANT_TARGETS ?= "create_dirs build.jars"
 
 FILES_${PN} = "${datadir_java}/${PN}.jar"
