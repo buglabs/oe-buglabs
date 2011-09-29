@@ -7,7 +7,7 @@
         notifempty
         compress
         postrotate
-		/etc/init.d/felix restart
+		/etc/init.d/knapsack restart
         endscript
 }
 
