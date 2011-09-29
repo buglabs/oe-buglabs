@@ -6,9 +6,6 @@
 	missingok
         notifempty
         compress
-        postrotate
-		/etc/init.d/knapsack restart
-        endscript
 }
 
 /var/log/kern.log

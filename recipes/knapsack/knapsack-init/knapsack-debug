@@ -43,6 +43,6 @@ if [ "$1" = "start" -o "$1" = "restart" ]; then
     export DISPLAY=:0.0
     `start-stop-daemon -S \
       --make-pidfile --pidfile /var/run/felix.pid \
-          --exec "$JVM_PATH" -- $EXTRA_ARGS > $LOG_FILE 2>&1 &`
+          --exec "$JVM_PATH" -- $EXTRA_ARGS >> $LOG_FILE 2>&1 &`
 fi
 
