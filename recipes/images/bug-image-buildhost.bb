@@ -6,9 +6,9 @@ inherit bug-image
 
 # These are the base system recipes
 IMAGE_INSTALL += "task-base-extended \
-		task-bug \
-		task-bug-devlangs \
-		task-bug-network \
+		task-bug-buildhost \
+		task-bug-buildhost-devlangs \
+		task-bug-buildhost-network \
+		task-bug-buildhost-build \
 		bash-sh \
-		task-bug-build \
 		"
