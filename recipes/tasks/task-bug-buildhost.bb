@@ -41,7 +41,6 @@ RDEPENDS_${PN}-build = "\
                   make \
                   cups-dev \
                   libx11-dev \
-                  libfreetype-dev \
                   patch-dev \
                   patchutils-dev \
                   sed-dev \
@@ -49,7 +48,6 @@ RDEPENDS_${PN}-build = "\
                   wget \
                   alsa-dev \
                   alsa-lib-dev \
-                  libgnome-2-dev \
                   libxp-dev \                 
 "
 
