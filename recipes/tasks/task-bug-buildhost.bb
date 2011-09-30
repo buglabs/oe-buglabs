@@ -1,10 +1,10 @@
 # Copyright (C) 2011 Bug Labs, Inc
 
-PR = "r0"
+PR = "r1"
 
 ALLOW_EMPTY = "1"
 
-PACKAGES += "${PN}-java ${PN}-devlangs ${PN}-network"
+PACKAGES += "${PN}-java ${PN}-devlangs ${PN}-network ${PN}-build"
 
 PACKAGE_ARCH_${PN} = "${MACHINE_ARCH}"
 
@@ -35,6 +35,22 @@ RDEPENDS_${PN}-network = "\
                   iperf \
 				  dropbear \
 				  portmap \
+"
+
+RDEPENDS_${PN}-build = "\
+                  make \
+                  cups-dev \
+                  libx11-dev \
+                  libfreetype-dev \
+                  patch-dev \
+                  patchutils-dev \
+                  sed-dev \
+                  unzip \
+                  wget \
+                  alsa-dev \
+                  alsa-lib-dev \
+                  libgnome-2-dev \
+                  libxp-dev \                 
 "
 
 RDEPENDS_${PN}-devlangs = "\

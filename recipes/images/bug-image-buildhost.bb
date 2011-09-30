@@ -1,4 +1,4 @@
-PR = "r1"
+PR = "r2"
 
 DEPENDS = "task-bug-buildhost"
 
@@ -10,4 +10,5 @@ IMAGE_INSTALL += "task-base-extended \
 		task-bug-devlangs \
 		task-bug-network \
 		bash-sh \
+		task-bug-build \
 		"
