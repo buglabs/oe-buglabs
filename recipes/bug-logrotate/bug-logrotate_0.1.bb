@@ -2,7 +2,7 @@ DESCRIPTION = "Logrotate rules for BUG"
 RDEPENDS_${PN} = "logrotate"
 
 SRC_URI = "file://bug-rules"
-
+PR="r2"
 S = "${WORKDIR}"
 
 PACKAGE_ARCH = "${MACHINE_ARCH}"
