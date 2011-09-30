@@ -9,9 +9,9 @@ S = "${WORKDIR}/git"
 DESCRIPTION = "BUGswarm connector enables BUG applications to integrate with BUGswarm"
 LICENSE = "ASL"
 
-PR = "${INC_PR}.0"
+PR = "${INC_PR}.1"
 
-DEPENDS += "com.buglabs.common felix-configadmin org.apache.felix.http.jetty servlet2.3 com.buglabs.osgi.sewing"
+DEPENDS += "com.buglabs.common felix-configadmin org.apache.felix.http.jetty servlet2.3 com.buglabs.osgi.sewing smack-smackx-osgi com.buglabs.util.shell"
 
 do_configure_prepend() {
 	rm -Rf ${S}/test
