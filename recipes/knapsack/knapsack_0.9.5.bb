@@ -1,6 +1,6 @@
 DESCRIPTION = "Knapsack for Apache Felix"
 LICENSE = "Apache 2.0"
-PR = "r2"
+PR = "r3"
 
 inherit java
 
@@ -13,10 +13,10 @@ SRC_URI = "git://github.com/kgilmer/knapsack.git;protocol=git;branch=${BRANCH}"
 FILES_${PN} = "/usr/share/osgi/${PN}.jar"
 PACKAGE_ARCH = "all"
 
-DEPENDS = "ant-native"
+DEPENDS = "ant-native openjdk-6-jre"
 
 do_compile() {
-	ant jar
+	ant -v jar
 }
 
 do_install() {
