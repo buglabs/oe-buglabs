@@ -41,6 +41,9 @@ RDEPENDS_${PN}-build = "\
                   make \
                   cups-dev \
                   libx11-dev \
+                  m4-dev \
+                  autoconf \
+                  autoconf-dev \
                   patch-dev \
                   patchutils-dev \
                   sed-dev \
