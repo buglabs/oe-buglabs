@@ -55,7 +55,7 @@ RDEPENDS_${PN}-devlangs = "\
                   lua5.1 \
                   python-modules \
                   python-misc \
-                  openjdk-6-jre \	
+                  openjdk-6-jdk \	
 				  python-pygobject \
 				  python-dbus \
 				  python-pybluez \
