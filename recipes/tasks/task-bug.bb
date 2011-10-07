@@ -1,6 +1,6 @@
 # Copyright (C) 2011 Bug Labs, Inc
 
-PR = "r111"
+PR = "r112"
 
 ALLOW_EMPTY = "1"
 
@@ -129,6 +129,7 @@ RDEPENDS_${PN}-java-osgi =  " \
 				com.buglabs.app.bugdash2 \
 				smack-smackx-osgi \
 				bugswarm-connector \
+				bugswarm-devicestats \
 "
 
 RDEPENDS_${PN}-audio = "\

@@ -9,7 +9,7 @@ S = "${WORKDIR}/git/com.buglabs.bug.swarm.connector"
 DESCRIPTION = "BUGswarm connector enables BUG applications to integrate with BUGswarm"
 LICENSE = "ASL"
 
-PR = "${INC_PR}.3"
+PR = "${INC_PR}.4"
 
 DEPENDS += "com.buglabs.common felix-configadmin org.apache.felix.http.jetty servlet2.3 com.buglabs.osgi.sewing smack-smackx-osgi com.buglabs.util.shell"
 BUNDLE_PERM = "0744"
