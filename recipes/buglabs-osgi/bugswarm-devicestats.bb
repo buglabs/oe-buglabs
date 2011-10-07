@@ -9,10 +9,15 @@ S = "${WORKDIR}/git/com.buglabs.bug.swarm.devicestats"
 DESCRIPTION = "BUGswarm-devicestats exports BUG machine state information to BUGswarm."
 LICENSE = "ASL"
 
-PR = "${INC_PR}.0"
+PR = "${INC_PR}.1"
 
 DEPENDS += "com.buglabs.common"
 BUNDLE_PERM = "0744"
+
+do_compile() {	
+	ant -v -Dbase.build.dir=${S} -Dcheckout.dir=${S} -DexternalDirectory=${STAGING_DIR_JAVA} -DdistDirectory=${WORKDIR}/dist ${ANT_TARGETS}
+	oe_jarinstall -s ${WORKDIR}/dist/${PN}.jar
+}
 
 do_configure_prepend() {
 	rm -Rf ${S}/test
