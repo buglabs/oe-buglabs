@@ -9,7 +9,7 @@ S = "${WORKDIR}/git/com.buglabs.bug.swarm.devicestats"
 DESCRIPTION = "BUGswarm-devicestats exports BUG machine state information to BUGswarm."
 LICENSE = "ASL"
 
-PR = "${INC_PR}.1"
+PR = "${INC_PR}.2"
 
 DEPENDS += "com.buglabs.common"
 BUNDLE_PERM = "0744"
