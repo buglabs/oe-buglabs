@@ -1,4 +1,5 @@
 datadir_java = ${datadir}/osgi/bundle
+propdir_java = ${datadir}/osgi/properties
 inherit java
 
 DEPENDS += "ant-native osgi-core osgi-compendium"
@@ -6,7 +7,7 @@ DEPENDS += "ant-native osgi-core osgi-compendium"
 SRC_URI = "git://github.com/buglabs/bug-osgi.git;protocol=git;branch=${BRANCH}"
 BRANCH = "master"
 
-INC_PR = "r39"
+INC_PR = "r40"
 
 S = "${WORKDIR}/git/${PN}"
 ANT_TARGETS ?= "create_dirs build.jars"
