@@ -1,13 +1,3 @@
-/var/log/felix.log
-{
-        rotate 7
-        daily
-	size 1M
-	missingok
-        notifempty
-        compress
-}
-
 /var/log/kern.log
 /var/log/debug
 /var/log/syslog
