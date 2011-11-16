@@ -1,6 +1,6 @@
 # Copyright (C) 2011 Bug Labs, Inc
 
-PR = "r111"
+PR = "r112"
 
 ALLOW_EMPTY = "1"
 
@@ -26,7 +26,6 @@ RDEPENDS_${PN}_append_bug20 = "bug2v4l2"
 
 RDEPENDS_${PN}-network = "\
                   dnsmasq \
-                  hostap-daemon \
                   iptables \
                   eject \
                   dhcp-client \
@@ -42,8 +41,9 @@ RDEPENDS_${PN}-network = "\
 		  ofono \
 		  avahi-daemon \
 		  dropbear \
-		  portmap \
 "
+#		  portmap \
+#                  hostap-daemon \
 
 RDEPENDS_${PN}-x11-debug = "\
                   xinput \
@@ -64,12 +64,12 @@ RDEPENDS_${PN}-docs = "\
 
 RDEPENDS_${PN}-x11 = "\
                   dbus-x11 \
-                  pcmanfm \
                   bug-reboot-icon \
                   bug-shutdown-icon \
                   xinput-calibrator \
                   synergy \
 "
+#                  pcmanfm \
 
 RDEPENDS_${PN}-devlangs = "\
                   lua5.1 \
