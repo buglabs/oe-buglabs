@@ -128,6 +128,8 @@ RDEPENDS_${PN}-java-osgi =  " \
 				bug-avahi \
 				com.buglabs.app.bugdash2 \
 				smack-smackx-osgi \
+				bugswarm-connector \
+				bugswarm-devicestats \
 "
 
 RDEPENDS_${PN}-audio = "\
