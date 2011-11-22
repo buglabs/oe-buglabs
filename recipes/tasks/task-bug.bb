@@ -130,6 +130,9 @@ RDEPENDS_${PN}-java-osgi =  " \
 				smack-smackx-osgi \
 				bugswarm-connector \
 				bugswarm-devicestats \
+				com.buglabs.bug.swarm.client \
+				org.touge.restclient \
+				jackson-binary \
 "
 
 RDEPENDS_${PN}-audio = "\
