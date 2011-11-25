@@ -1,11 +1,11 @@
 DESCRIPTION = "Jackson JSON Library, BINARY recipe"
 LICENSE = "ASL2"
-PR = "r2"
+PR = "r3"
 
 S = "${WORKDIR}/"
 
-FILES_${PN} = "/usr/share/java/jackson-core-asl-1.9.2.jar"
-FILES_${PN} += "/usr/share/java/jackson-mapper-asl-1.9.2.jar"
+FILES_${PN} = "/usr/share/osgi/bundle/jackson-core-asl-1.9.2.jar"
+FILES_${PN} += "/usr/share/osgi/bundle/jackson-mapper-asl-1.9.2.jar"
 
 PACKAGE_ARCH = "all"
 
