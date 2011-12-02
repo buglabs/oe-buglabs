@@ -5,7 +5,7 @@ and traceroute packets."
 HOMEPAGE = "http://michael.toren.net/code/tcptraceroute/"
 LICENSE = "GPL"
 PRIORITY = "optional"
-DEPENDS = "libnet-1.1"
+DEPENDS = "libnet-1.1 libpcap"
 PR = "r0"
 
 SRC_URI = "http://michael.toren.net/code/tcptraceroute/tcptraceroute-${PV}.tar.gz \
