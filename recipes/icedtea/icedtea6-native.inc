@@ -1,7 +1,7 @@
 DESCRIPTION = "Harness to build the source code from OpenJDK using Free Software build tools"
 HOMEPAGE = "http://icedtea.classpath.org"
 LICENSE  = "GPL with Classpath Exception"
-INC_PR = "r4"
+INC_PR = "r5"
 
 DEPENDS = "virtual/javac-native classpath-tools-native \
 	   virtual/java-native classpath-native \
@@ -22,6 +22,7 @@ PARALLEL_MAKE = ""
 # openjdk-ecj looks in /usr/include and /usr/lib for freetype by default.
 export ALT_FREETYPE_HEADERS_PATH = "${STAGING_INCDIR}/freetype2"
 export ALT_FREETYPE_LIB_PATH = "${STAGING_LIBDIR}"
+export DISABLE_HOTSPOT_OS_VERSION_CHECK=ok
 
 # Configure options compatible with Cacao >= 0.99 only!
 EXTRA_OECONF = "\
