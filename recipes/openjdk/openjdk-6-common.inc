@@ -10,7 +10,7 @@ ICEDTEA = "NEEDS TO BE SET"
 S = "${WORKDIR}/${ICEDTEA}"
 B = "${S}/build"
 
-INC_PR = "r11"
+INC_PR = "r12"
 
 SRC_URI = "\
   ${ICEDTEA_URI} \
@@ -73,6 +73,7 @@ export ALT_FREETYPE_LIB_PATH = "${STAGING_LIBDIR}"
 export CACAO_CONFIGURE_ARGS = "\
 	${@['','--enable-softfloat'][bb.data.getVar('TARGET_FPU',d,1) == 'soft']} \
 	--with-cacaoh=${STAGING_BINDIR_NATIVE}/cacaoh-openjdk-0.99.4"
+export DISABLE_HOTSPOT_OS_VERSION_CHECK=ok
 
 JAVA_HOME[unexport] = "1"
 
